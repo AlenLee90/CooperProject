@@ -140,12 +140,22 @@ class SecondViewController: UIViewController {
         }catch{
             print(error)
         }
+        
+        do{
+        try self.database.run(commonCurrencyTable.addColumn(Expression<Int?>("status")))
+        }catch{
+            print(error)
+        }
     }
     
     @IBAction func InsertData(_ sender: UIButton) {
         print("Inserting Data")
+       
+        let temp = ["USD","JPY","CNY","EUR","GBP"]
         
-        let insertData = self.commonCategoryTable.insert(self.categoryName <- "Clothes",self.deleteFlag <- 0)
+        for data in temp{
+        
+        let insertData = self.commonCurrencyTable.insert(self.currencyCode <- data,self.deleteFlag <- 0)
         
         do{
             try self.database.run(insertData)
@@ -153,13 +163,19 @@ class SecondViewController: UIViewController {
         }catch{
             print(error)
         }
+        
+        }
     }
     
     @IBAction func selectData(_ sender: UIButton) {
         do{
-        let selectedDatas = try self.database.prepare(self.inputDetailTable)
+//            let updateData = self.commonCurrencyTable.filter(self.deleteFlag == 0 && self.currencyCode == "USD")
+//            let updateQuery = updateData.update( Expression<Int>("status") <- 1)
+//            try self.database.run(updateQuery)
+        let selectedDatas = try self.database.prepare(self.commonCurrencyTable)
             for selectedData in selectedDatas{
-                print("id: \(selectedData[self.id]) ,code: \(selectedData[self.categoryId]),typeFlag: \(selectedData[self.typeFlag]),createTime: \(selectedData[self.createTime]),amount: \(selectedData[self.amount]),location: \(selectedData[self.location])")
+//                print("id: \(selectedData[self.id]) ,code: \(selectedData[self.categoryId]),typeFlag: \(selectedData[self.typeFlag]),createTime: \(selectedData[self.createTime]),amount: \(selectedData[self.amount]),location: \(selectedData[self.location])")
+                print(selectedData[Expression<Int>("status")])
             }
         }catch{
             print(error)

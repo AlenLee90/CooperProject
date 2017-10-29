@@ -29,6 +29,14 @@ class TabBarController: UITabBarController {
         input_data_nav_viewcontroller.tabBarItem = UITabBarItem(title:"Input",image:nil,tag:0)
         personal_nav_viewcontroller.tabBarItem = UITabBarItem(title:"Personal",image:nil,tag:3)
         report_nav_viewcontroller.tabBarItem = UITabBarItem(title:"Report",image:nil,tag:2)
+        input_data_nav_viewcontroller.tabBarItem.image=UIImage(named: "icons8-enter_pin.png")?.withRenderingMode(.alwaysOriginal) // deselect image
+        input_data_nav_viewcontroller.tabBarItem.selectedImage = UIImage(named: "icons8-enter_pin.png")?.withRenderingMode(.alwaysOriginal) // select image
+        view_nav_viewcontroller.tabBarItem.image=UIImage(named: "icons8-show_property.png")?.withRenderingMode(.alwaysOriginal) // deselect image
+        view_nav_viewcontroller.tabBarItem.selectedImage = UIImage(named: "icons8-show_property.png")?.withRenderingMode(.alwaysOriginal) // select image
+        report_nav_viewcontroller.tabBarItem.image=UIImage(named: "icons8-futures_filled.png")?.withRenderingMode(.alwaysOriginal) // deselect image
+        report_nav_viewcontroller.tabBarItem.selectedImage = UIImage(named: "icons8-futures_filled.png")?.withRenderingMode(.alwaysOriginal) // select image
+        personal_nav_viewcontroller.tabBarItem.image=UIImage(named: "icons8-settings_filled.png")?.withRenderingMode(.alwaysOriginal) // deselect image
+        personal_nav_viewcontroller.tabBarItem.selectedImage = UIImage(named: "icons8-settings_filled.png")?.withRenderingMode(.alwaysOriginal) // select image
         
         self.viewControllers = [input_data_nav_viewcontroller,view_nav_viewcontroller,report_nav_viewcontroller,personal_nav_viewcontroller]
         

@@ -75,15 +75,18 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     range: textRange)
                 tempTwoAmout = myMutableString
             }
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+            let createTimeFormat = formatter.string(from: selectedData[Expression<Date>("create_time")])
             labelOneArray.append(String(selectedData[Expression<Int>("id")]))
             labelTwoArray.append(tempTwoAmout!)
             labelThreeArray.append(String(selectedData[Expression<String>("location")]))
-            labelFourArray.append(String(describing: selectedData[Expression<Date>("create_time")]))
+            labelFourArray.append(createTimeFormat)
         }
-        cell.labelOne.text = labelOneArray[indexPath.row]
-        cell.labelTwo.attributedText = labelTwoArray[indexPath.row]
-        cell.labelThree.text = labelThreeArray[indexPath.row]
-        cell.labelFour.text = labelFourArray[indexPath.row]
+//        cell.labelOne.text = labelOneArray[indexPath.row]
+        cell.labelOne.attributedText = labelTwoArray[indexPath.row]
+//        cell.labelThree.text = labelThreeArray[indexPath.row]
+        cell.labelTwo.text = labelFourArray[indexPath.row]
         
         return cell
     }

@@ -1,23 +1,23 @@
 //
-//  DetailTableViewCell.swift
+//  CurrencyManagementCell.swift
 //  Cooper
 //
-//  Created by 李亚男 on 2017/10/21.
+//  Created by 李亚男 on 2017/10/29.
 //  Copyright © 2017年 李亚男. All rights reserved.
 //
 
 import UIKit
 
-class DetailTableViewCell: UITableViewCell {
-    @IBOutlet weak var labelOne: UILabel!    
-    @IBOutlet weak var labelTwo: UILabel!
+class CurrencyManagementCell: UITableViewCell {
 
+    @IBOutlet weak var currencyCellCheckImage: UIImageView!
+    @IBOutlet weak var currencyCellLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
