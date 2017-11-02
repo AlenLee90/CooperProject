@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13528" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13526"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -34,7 +34,7 @@
         <!--Detail View Controller-->
         <scene sceneID="Db1-Tf-ER1">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="XE0-Ul-aBu" customClass="DetailViewController" customModule="Cooper" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailVc" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XE0-Ul-aBu" customClass="DetailViewController" customModule="Cooper" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xEf-i3-d0i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,8 +94,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="XE0-Ul-aBu" id="w4d-Ur-z15"/>
-                                    <outlet property="delegate" destination="XE0-Ul-aBu" id="yqp-HQ-Ong"/>
+                                    <outlet property="dataSource" destination="XE0-Ul-aBu" id="OFX-zZ-g8r"/>
+                                    <outlet property="delegate" destination="XE0-Ul-aBu" id="86q-wt-EiC"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -108,8 +108,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ced-Sr-oNe"/>
                     </view>
-                    <navigationItem key="navigationItem" id="I0N-wv-8x7"/>
+                    <navigationItem key="navigationItem" id="I0N-wv-8x7">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="v26-r9-dFv">
+                            <connections>
+                                <action selector="refresh:" destination="XE0-Ul-aBu" id="nEl-Wj-36S"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="C17-HX-TNf" id="6gj-zV-Kmd"/>
                         <segue destination="Efz-5U-O0c" kind="show" identifier="OneToSecondSegue" id="xQf-TY-iJO"/>
                     </connections>
                 </viewController>

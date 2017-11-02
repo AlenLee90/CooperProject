@@ -22,10 +22,9 @@ class ReportService {
         var incomeAmount :String?
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
-//        let myString = formatter.string(from: Date())
-        let myString = "2017-10-25"
+        let myString = formatter.string(from: Date())
         do{
-            let stmt = try self.database.prepare("SELECT ifnull(sum(amount),0) as amount FROM input_detail where type_flag='0' and create_time like '\(myString)%'")
+            let stmt = try self.database.prepare("SELECT ifnull(sum(amount),0) as amount FROM input_detail where type_flag='0' and delete_flag='0' and create_time like '\(myString)%'")
             for row in stmt {
                 for (index, name) in stmt.columnNames.enumerated() {
                     if name == "amount" {
@@ -38,7 +37,7 @@ class ReportService {
             print(error)
         }
         do{
-            let stmt = try self.database.prepare("SELECT ifnull(sum(amount),0) as amount FROM input_detail where type_flag='1' and create_time like '\(myString)%'")
+            let stmt = try self.database.prepare("SELECT ifnull(sum(amount),0) as amount FROM input_detail where type_flag='1' and delete_flag='0' and create_time like '\(myString)%'")
             for row in stmt {
                 for (index, name) in stmt.columnNames.enumerated() {
                     if name == "amount" {
@@ -68,13 +67,13 @@ class ReportService {
         self.database = DatabaseHelper.postRequest()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
-        //        let myString = formatter.string(from: Date())
-        let myString = "2017-10-25"
+        let myString = formatter.string(from: Date())
+//        let myString = "2017-11-01"
         
         var paymentEntryArray = [PieChartDataEntry]()
     
         do{
-            let stmt = try self.database.prepare("SELECT ifnull(sum(a.amount),0) as amount,b.category_name FROM input_detail as a left join common_category as b on a.category_id = b.category_id where a.type_flag = '0' and a.create_time like '\(myString)%' group by a.category_id")
+            let stmt = try self.database.prepare("SELECT ifnull(sum(a.amount),0) as amount,b.category_name FROM input_detail as a left join common_category as b on a.category_id = b.category_id where a.type_flag = '0' and a.delete_flag = 0 and a.create_time like '\(myString)%' group by a.category_id")
             for row in stmt {
                 var label :String?
                 var amount :String?
@@ -106,13 +105,13 @@ class ReportService {
         self.database = DatabaseHelper.postRequest()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
-        //        let myString = formatter.string(from: Date())
-        let myString = "2017-10-25"
+        let myString = formatter.string(from: Date())
+//        let myString = "2017-10-25"
         
         var incomeEntryArray = [PieChartDataEntry]()
         
         do{
-            let stmt = try self.database.prepare("SELECT ifnull(sum(a.amount),0) as amount,b.category_name FROM input_detail as a left join common_category as b on a.category_id = b.category_id where a.type_flag = '1' and a.create_time like '\(myString)%' group by a.category_id")
+            let stmt = try self.database.prepare("SELECT ifnull(sum(a.amount),0) as amount,b.category_name FROM input_detail as a left join common_category as b on a.category_id = b.category_id where a.type_flag = '1' and a.delete_flag = 0 and a.create_time like '\(myString)%' group by a.category_id")
             for row in stmt {
                 var label :String?
                 var amount :String?

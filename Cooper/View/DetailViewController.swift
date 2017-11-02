@@ -10,6 +10,8 @@ import UIKit
 import SQLite
 
 class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var tableView: UITableView!
+    
     
     let inputDetailTable = Table("input_detail")
     
@@ -22,16 +24,26 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let deleteFlag = Expression<Int>("delete_flag")
     
     var selectedDatas :AnySequence<Row>!
+
+
     
     let viewService = ViewService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        labelOneArray.removeAll()
+        labelTwoArray.removeAll()
+        labelThreeArray.removeAll()
+        labelFourArray.removeAll()
+        getTableViewData()
+        self.tableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        selectedDatas = viewService.selectTableData()
+        let selectedDatas = viewService.selectTableData()
         var counter = 0
         for _ in selectedDatas{
             counter += 1
@@ -40,49 +52,10 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell  {
-        selectedDatas = viewService.selectTableData()
+        
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DetailTableViewCell
-        for selectedData in selectedDatas{
-            var tempAmount = String(selectedData[Expression<Int>("amount")])
-            var tempTwoAmout :NSAttributedString?
-            if selectedData[Expression<Int>("type_flag")] == 0 {
-                tempAmount = "-"+tempAmount
-                let text = tempAmount
-                let nsText = text as NSString
-                let textRange = NSMakeRange(0, nsText.length)
-                let myMutableString = NSMutableAttributedString(
-                    string: tempAmount,
-                    attributes: [:])
-                myMutableString.addAttribute(
-                    NSAttributedStringKey.foregroundColor,
-                    value: UIColor.red,
-                    range: textRange)
-                tempTwoAmout = myMutableString
-            } else {
-                tempAmount = "+"+tempAmount
-                
-                let text = tempAmount
-                let nsText = text as NSString
-                let textRange = NSMakeRange(0, nsText.length)
-                
-                let myMutableString = NSMutableAttributedString(
-                    string: tempAmount,
-                    attributes: [:])
-                myMutableString.addAttribute(
-                    NSAttributedStringKey.foregroundColor,
-                    value: UIColor.green,
-                    range: textRange)
-                tempTwoAmout = myMutableString
-            }
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
-            let createTimeFormat = formatter.string(from: selectedData[Expression<Date>("create_time")])
-            labelOneArray.append(String(selectedData[Expression<Int>("id")]))
-            labelTwoArray.append(tempTwoAmout!)
-            labelThreeArray.append(String(selectedData[Expression<String>("location")]))
-            labelFourArray.append(createTimeFormat)
-        }
+
 //        cell.labelOne.text = labelOneArray[indexPath.row]
         cell.labelOne.attributedText = labelTwoArray[indexPath.row]
 //        cell.labelThree.text = labelThreeArray[indexPath.row]
@@ -141,6 +114,56 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         self.present(alert, animated: true, completion: nil)
     }
-
+    
+    @IBAction func refresh(_ sender: UIBarButtonItem) {
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "detailVc")
+        let navController = UINavigationController(rootViewController: vc)
+        self.present(navController, animated:true, completion: nil)
+    }
+    
+    func getTableViewData() {
+        let selectedDatas = viewService.selectTableData()
+        
+        for selectedData in selectedDatas{
+            var tempAmount = String(selectedData[Expression<Int>("amount")])
+            var tempTwoAmout :NSAttributedString?
+            if selectedData[Expression<Int>("type_flag")] == 0 {
+                tempAmount = "-"+tempAmount
+                let text = tempAmount
+                let nsText = text as NSString
+                let textRange = NSMakeRange(0, nsText.length)
+                let myMutableString = NSMutableAttributedString(
+                    string: tempAmount,
+                    attributes: [:])
+                myMutableString.addAttribute(
+                    NSAttributedStringKey.foregroundColor,
+                    value: UIColor.red,
+                    range: textRange)
+                tempTwoAmout = myMutableString
+            } else {
+                tempAmount = "+"+tempAmount
+                
+                let text = tempAmount
+                let nsText = text as NSString
+                let textRange = NSMakeRange(0, nsText.length)
+                
+                let myMutableString = NSMutableAttributedString(
+                    string: tempAmount,
+                    attributes: [:])
+                myMutableString.addAttribute(
+                    NSAttributedStringKey.foregroundColor,
+                    value: UIColor.green,
+                    range: textRange)
+                tempTwoAmout = myMutableString
+            }
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+            let createTimeFormat = formatter.string(from: selectedData[Expression<Date>("create_time")])
+            self.labelOneArray.append(String(selectedData[Expression<Int>("id")]))
+            self.labelTwoArray.append(tempTwoAmout!)
+            self.labelThreeArray.append(String(selectedData[Expression<String>("location")]))
+            self.labelFourArray.append(createTimeFormat)
+        }
+    }
 }
 

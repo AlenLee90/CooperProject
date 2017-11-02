@@ -60,19 +60,16 @@ class CurrencyManagementController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         currencyManagementService.didSelectUpdate(currencyId: currencyIdArray[indexPath.row])
-        present( UIStoryboard(name: "CurrencyManagement", bundle: nil).instantiateViewController(withIdentifier: "currencyStory") as! UINavigationController, animated: false, completion: nil)
+        self.dismiss(animated: true, completion: nil)
+//        let vc = self.storyboard!.instantiateViewController(withIdentifier: "currencyVc")
+//        let navController = UINavigationController(rootViewController: vc)
+//        self.present(navController, animated:true, completion: nil)
+
     }
     
     func navigationButtonClose(sender: UIBarButtonItem) {
         present( UIStoryboard(name: "Personal", bundle: nil).instantiateViewController(withIdentifier: "personal_nav") as! UINavigationController, animated: false, completion: nil)
     }
     
-//    func tappedBackButton() {
-//        
-//        // Do your thing
-//        
-//        self.navigationController!.popViewController(animated: true)
-//    }
-
 }
 

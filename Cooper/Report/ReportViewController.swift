@@ -23,6 +23,11 @@ class ReportViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        barChartUpdate()
+//        pieChartUpdate()
+//        selectResultData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         pieChartUpdate()
         selectResultData()
     }

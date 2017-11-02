@@ -7,16 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F90F14281FA5AC7E00535668 /* icons8-show_property.png in Resources */ = {isa = PBXBuildFile; fileRef = F90F14261FA5AC7E00535668 /* icons8-show_property.png */; };
-		F90F14291FA5AC7E00535668 /* icons8-enter_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = F90F14271FA5AC7E00535668 /* icons8-enter_pin.png */; };
-		F90F142B1FA5ACEA00535668 /* icons8-futures_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = F90F142A1FA5ACEA00535668 /* icons8-futures_filled.png */; };
-		F90F142D1FA5AD7600535668 /* icons8-settings_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = F90F142C1FA5AD7600535668 /* icons8-settings_filled.png */; };
 		F90F142F1FA5C61100535668 /* PersonalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F142E1FA5C61100535668 /* PersonalCollectionViewCell.swift */; };
-		F90F14401FA5D2D800535668 /* icons8-usd.png in Resources */ = {isa = PBXBuildFile; fileRef = F90F143F1FA5D2D800535668 /* icons8-usd.png */; };
-		F90F14421FA5D36E00535668 /* icons8-mind_map.png in Resources */ = {isa = PBXBuildFile; fileRef = F90F14411FA5D36E00535668 /* icons8-mind_map.png */; };
-		F90F14441FA5D37200535668 /* icons8-star.png in Resources */ = {isa = PBXBuildFile; fileRef = F90F14431FA5D37200535668 /* icons8-star.png */; };
-		F90F14461FA5D37600535668 /* icons8-attention.png in Resources */ = {isa = PBXBuildFile; fileRef = F90F14451FA5D37600535668 /* icons8-attention.png */; };
-		F90F14481FA5D37A00535668 /* icons8-geography.png in Resources */ = {isa = PBXBuildFile; fileRef = F90F14471FA5D37A00535668 /* icons8-geography.png */; };
 		F90F144B1FA5D8D200535668 /* CategoryManagementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F144A1FA5D8D200535668 /* CategoryManagementController.swift */; };
 		F90F144D1FA5D8E200535668 /* CategoryManagement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F90F144C1FA5D8E200535668 /* CategoryManagement.storyboard */; };
 		F90F14501FA5D96000535668 /* CurrencyManagementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F144F1FA5D96000535668 /* CurrencyManagementController.swift */; };
@@ -27,18 +18,12 @@
 		F90F145C1FA5DA4500535668 /* Language.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F90F145B1FA5DA4500535668 /* Language.storyboard */; };
 		F90F145E1FA5E4A600535668 /* CurrencyManagementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F145D1FA5E4A600535668 /* CurrencyManagementCell.swift */; };
 		F90F14601FA5E72700535668 /* CurrencyManagementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F145F1FA5E72700535668 /* CurrencyManagementService.swift */; };
-		F90F14621FA5FF0B00535668 /* icons8-checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = F90F14611FA5FF0B00535668 /* icons8-checkmark.png */; };
-		F90F14641FA6092100535668 /* icons8-blank.png in Resources */ = {isa = PBXBuildFile; fileRef = F90F14631FA6092000535668 /* icons8-blank.png */; };
 		F95B68521FA44DB6000715C6 /* InputDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95B68511FA44DB6000715C6 /* InputDetail.swift */; };
 		F95B68541FA44EBE000715C6 /* CommonCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95B68531FA44EBE000715C6 /* CommonCurrency.swift */; };
 		F95B68561FA44F44000715C6 /* CommonCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95B68551FA44F44000715C6 /* CommonCategory.swift */; };
 		F95B68581FA45D89000715C6 /* ReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95B68571FA45D89000715C6 /* ReportService.swift */; };
 		F95B685A1FA46CD1000715C6 /* InputDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95B68591FA46CD1000715C6 /* InputDataService.swift */; };
 		F95B685D1FA4A3E9000715C6 /* ViewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95B685C1FA4A3E9000715C6 /* ViewService.swift */; };
-		F96781871F9C75AF0079A4EA /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F967817A1F9C75A50079A4EA /* SQLite.framework */; };
-		F96781891F9C75B40079A4EA /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F967817A1F9C75A50079A4EA /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F96781C51F9CD9CF0079A4EA /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96781BC1F9CD97E0079A4EA /* Charts.framework */; };
-		F96781C61F9CD9CF0079A4EA /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F96781BC1F9CD97E0079A4EA /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F98F1F8E1F924FB80001CC12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98F1F8D1F924FB80001CC12 /* AppDelegate.swift */; };
 		F98F1F901F924FB80001CC12 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98F1F8F1F924FB80001CC12 /* DetailViewController.swift */; };
 		F98F1F931F924FB80001CC12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F98F1F911F924FB80001CC12 /* Main.storyboard */; };
@@ -53,6 +38,21 @@
 		F9FD23641F963043005BD2B9 /* View.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9FD23631F963043005BD2B9 /* View.storyboard */; };
 		F9FD23661F96306D005BD2B9 /* InputData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9FD23651F96306D005BD2B9 /* InputData.storyboard */; };
 		F9FD23691F963ADD005BD2B9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FD23681F963ADD005BD2B9 /* LoginViewController.swift */; };
+		F9FDB1631FAA085A00D0F8CC /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9FDB1561FAA084D00D0F8CC /* SQLite.framework */; };
+		F9FDB1641FAA085A00D0F8CC /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F9FDB1561FAA084D00D0F8CC /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F9FDB1671FAA086000D0F8CC /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9FDB1481FAA083C00D0F8CC /* Charts.framework */; };
+		F9FDB1681FAA086000D0F8CC /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F9FDB1481FAA083C00D0F8CC /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F9FDB16C1FAA08CF00D0F8CC /* icons8-enter_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = F9FDB16B1FAA08CF00D0F8CC /* icons8-enter_pin.png */; };
+		F9FDB1771FAA08DB00D0F8CC /* icons8-star.png in Resources */ = {isa = PBXBuildFile; fileRef = F9FDB16D1FAA08DA00D0F8CC /* icons8-star.png */; };
+		F9FDB1781FAA08DB00D0F8CC /* icons8-settings_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = F9FDB16E1FAA08DA00D0F8CC /* icons8-settings_filled.png */; };
+		F9FDB1791FAA08DB00D0F8CC /* icons8-futures_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = F9FDB16F1FAA08DB00D0F8CC /* icons8-futures_filled.png */; };
+		F9FDB17A1FAA08DB00D0F8CC /* icons8-geography.png in Resources */ = {isa = PBXBuildFile; fileRef = F9FDB1701FAA08DB00D0F8CC /* icons8-geography.png */; };
+		F9FDB17B1FAA08DB00D0F8CC /* icons8-mind_map.png in Resources */ = {isa = PBXBuildFile; fileRef = F9FDB1711FAA08DB00D0F8CC /* icons8-mind_map.png */; };
+		F9FDB17C1FAA08DB00D0F8CC /* icons8-blank.png in Resources */ = {isa = PBXBuildFile; fileRef = F9FDB1721FAA08DB00D0F8CC /* icons8-blank.png */; };
+		F9FDB17D1FAA08DB00D0F8CC /* icons8-show_property.png in Resources */ = {isa = PBXBuildFile; fileRef = F9FDB1731FAA08DB00D0F8CC /* icons8-show_property.png */; };
+		F9FDB17E1FAA08DB00D0F8CC /* icons8-attention.png in Resources */ = {isa = PBXBuildFile; fileRef = F9FDB1741FAA08DB00D0F8CC /* icons8-attention.png */; };
+		F9FDB17F1FAA08DB00D0F8CC /* icons8-checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = F9FDB1751FAA08DB00D0F8CC /* icons8-checkmark.png */; };
+		F9FDB1801FAA08DB00D0F8CC /* icons8-usd.png in Resources */ = {isa = PBXBuildFile; fileRef = F9FDB1761FAA08DB00D0F8CC /* icons8-usd.png */; };
 		F9FDC1951F978083006D2493 /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FDC1941F978083006D2493 /* PersonalViewController.swift */; };
 		F9FDC1971F978091006D2493 /* Personal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9FDC1961F978091006D2493 /* Personal.storyboard */; };
 		F9FDC19A1F9782F4006D2493 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FDC1991F9782F4006D2493 /* ReportViewController.swift */; };
@@ -60,89 +60,89 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F96781791F9C75A50079A4EA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F967816F1F9C75A50079A4EA /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EE247AD31C3F04ED00AE3E12;
-			remoteInfo = "SQLite iOS";
-		};
-		F967817B1F9C75A50079A4EA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F967816F1F9C75A50079A4EA /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EE247ADD1C3F04ED00AE3E12;
-			remoteInfo = "SQLiteTests iOS";
-		};
-		F967817D1F9C75A50079A4EA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F967816F1F9C75A50079A4EA /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EE247B3C1C3F3ED000AE3E12;
-			remoteInfo = "SQLite Mac";
-		};
-		F967817F1F9C75A50079A4EA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F967816F1F9C75A50079A4EA /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EE247B451C3F3ED000AE3E12;
-			remoteInfo = "SQLiteTests Mac";
-		};
-		F96781811F9C75A50079A4EA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F967816F1F9C75A50079A4EA /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 03A65E5A1C6BB0F50062603F;
-			remoteInfo = "SQLite tvOS";
-		};
-		F96781831F9C75A50079A4EA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F967816F1F9C75A50079A4EA /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 03A65E631C6BB0F60062603F;
-			remoteInfo = "SQLiteTests tvOS";
-		};
-		F96781851F9C75A50079A4EA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F967816F1F9C75A50079A4EA /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A121AC451CA35C79005A31D1;
-			remoteInfo = "SQLite watchOS";
-		};
-		F967818A1F9C75B40079A4EA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F967816F1F9C75A50079A4EA /* SQLite.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = EE247AD21C3F04ED00AE3E12;
-			remoteInfo = "SQLite iOS";
-		};
-		F96781BB1F9CD97E0079A4EA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F96781B61F9CD97E0079A4EA /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
-			remoteInfo = Charts;
-		};
-		F96781BD1F9CD97E0079A4EA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F96781B61F9CD97E0079A4EA /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
-			remoteInfo = ChartsTests;
-		};
-		F96781C71F9CD9CF0079A4EA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F96781B61F9CD97E0079A4EA /* Charts.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A58A4ED274A941CA248EA921;
-			remoteInfo = Charts;
-		};
 		F98F1F9F1F924FB90001CC12 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F98F1F821F924FB80001CC12 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = F98F1F891F924FB80001CC12;
 			remoteInfo = DailyFinance;
+		};
+		F9FDB1471FAA083C00D0F8CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9FDB1421FAA083C00D0F8CC /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
+			remoteInfo = Charts;
+		};
+		F9FDB1491FAA083C00D0F8CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9FDB1421FAA083C00D0F8CC /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
+			remoteInfo = ChartsTests;
+		};
+		F9FDB1551FAA084D00D0F8CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9FDB14B1FAA084D00D0F8CC /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247AD31C3F04ED00AE3E12;
+			remoteInfo = "SQLite iOS";
+		};
+		F9FDB1571FAA084D00D0F8CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9FDB14B1FAA084D00D0F8CC /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247ADD1C3F04ED00AE3E12;
+			remoteInfo = "SQLiteTests iOS";
+		};
+		F9FDB1591FAA084D00D0F8CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9FDB14B1FAA084D00D0F8CC /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B3C1C3F3ED000AE3E12;
+			remoteInfo = "SQLite Mac";
+		};
+		F9FDB15B1FAA084D00D0F8CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9FDB14B1FAA084D00D0F8CC /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B451C3F3ED000AE3E12;
+			remoteInfo = "SQLiteTests Mac";
+		};
+		F9FDB15D1FAA084D00D0F8CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9FDB14B1FAA084D00D0F8CC /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E5A1C6BB0F50062603F;
+			remoteInfo = "SQLite tvOS";
+		};
+		F9FDB15F1FAA084D00D0F8CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9FDB14B1FAA084D00D0F8CC /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E631C6BB0F60062603F;
+			remoteInfo = "SQLiteTests tvOS";
+		};
+		F9FDB1611FAA084D00D0F8CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9FDB14B1FAA084D00D0F8CC /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A121AC451CA35C79005A31D1;
+			remoteInfo = "SQLite watchOS";
+		};
+		F9FDB1651FAA085A00D0F8CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9FDB14B1FAA084D00D0F8CC /* SQLite.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EE247AD21C3F04ED00AE3E12;
+			remoteInfo = "SQLite iOS";
+		};
+		F9FDB1691FAA086000D0F8CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9FDB1421FAA083C00D0F8CC /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A58A4ED274A941CA248EA921;
+			remoteInfo = Charts;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -153,8 +153,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F96781891F9C75B40079A4EA /* SQLite.framework in Embed Frameworks */,
-				F96781C61F9CD9CF0079A4EA /* Charts.framework in Embed Frameworks */,
+				F9FDB1641FAA085A00D0F8CC /* SQLite.framework in Embed Frameworks */,
+				F9FDB1681FAA086000D0F8CC /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,16 +162,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F90F14261FA5AC7E00535668 /* icons8-show_property.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-show_property.png"; path = "../../../../icon/icons8-show_property.png"; sourceTree = "<group>"; };
-		F90F14271FA5AC7E00535668 /* icons8-enter_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-enter_pin.png"; path = "../../../../icon/icons8-enter_pin.png"; sourceTree = "<group>"; };
-		F90F142A1FA5ACEA00535668 /* icons8-futures_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-futures_filled.png"; path = "../../../../icon/icons8-futures_filled.png"; sourceTree = "<group>"; };
-		F90F142C1FA5AD7600535668 /* icons8-settings_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-settings_filled.png"; path = "../../../../icon/icons8-settings_filled.png"; sourceTree = "<group>"; };
 		F90F142E1FA5C61100535668 /* PersonalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCollectionViewCell.swift; sourceTree = "<group>"; };
-		F90F143F1FA5D2D800535668 /* icons8-usd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-usd.png"; path = "../../../../icon/icons8-usd.png"; sourceTree = "<group>"; };
-		F90F14411FA5D36E00535668 /* icons8-mind_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-mind_map.png"; path = "../../../../icon/icons8-mind_map.png"; sourceTree = "<group>"; };
-		F90F14431FA5D37200535668 /* icons8-star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-star.png"; path = "../../../../icon/icons8-star.png"; sourceTree = "<group>"; };
-		F90F14451FA5D37600535668 /* icons8-attention.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-attention.png"; path = "../../../../icon/icons8-attention.png"; sourceTree = "<group>"; };
-		F90F14471FA5D37A00535668 /* icons8-geography.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-geography.png"; path = "../../../../icon/icons8-geography.png"; sourceTree = "<group>"; };
 		F90F144A1FA5D8D200535668 /* CategoryManagementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryManagementController.swift; sourceTree = "<group>"; };
 		F90F144C1FA5D8E200535668 /* CategoryManagement.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryManagement.storyboard; sourceTree = "<group>"; };
 		F90F144F1FA5D96000535668 /* CurrencyManagementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyManagementController.swift; sourceTree = "<group>"; };
@@ -182,8 +173,6 @@
 		F90F145B1FA5DA4500535668 /* Language.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Language.storyboard; sourceTree = "<group>"; };
 		F90F145D1FA5E4A600535668 /* CurrencyManagementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyManagementCell.swift; sourceTree = "<group>"; };
 		F90F145F1FA5E72700535668 /* CurrencyManagementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyManagementService.swift; sourceTree = "<group>"; };
-		F90F14611FA5FF0B00535668 /* icons8-checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-checkmark.png"; path = "../../../../icon/icons8-checkmark.png"; sourceTree = "<group>"; };
-		F90F14631FA6092000535668 /* icons8-blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-blank.png"; path = "../../../../icon/icons8-blank.png"; sourceTree = "<group>"; };
 		F95B68511FA44DB6000715C6 /* InputDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDetail.swift; sourceTree = "<group>"; };
 		F95B68531FA44EBE000715C6 /* CommonCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCurrency.swift; sourceTree = "<group>"; };
 		F95B68551FA44F44000715C6 /* CommonCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCategory.swift; sourceTree = "<group>"; };
@@ -192,8 +181,6 @@
 		F95B685C1FA4A3E9000715C6 /* ViewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewService.swift; sourceTree = "<group>"; };
 		F967814C1F9C6FA60079A4EA /* Cooper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cooper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96781681F9C74CC0079A4EA /* CooperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CooperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F967816F1F9C75A50079A4EA /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../SQLite.swift-update-docs/SQLite.xcodeproj"; sourceTree = "<group>"; };
-		F96781B61F9CD97E0079A4EA /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../Charts-CombinedChart/Charts.xcodeproj"; sourceTree = "<group>"; };
 		F98F1F8D1F924FB80001CC12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F98F1F8F1F924FB80001CC12 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F98F1F921F924FB80001CC12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -210,6 +197,19 @@
 		F9FD23631F963043005BD2B9 /* View.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = View.storyboard; sourceTree = "<group>"; };
 		F9FD23651F96306D005BD2B9 /* InputData.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputData.storyboard; sourceTree = "<group>"; };
 		F9FD23681F963ADD005BD2B9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F9FDB1421FAA083C00D0F8CC /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../Desktop/Charts-CombinedChart/Charts.xcodeproj"; sourceTree = "<group>"; };
+		F9FDB14B1FAA084D00D0F8CC /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../../Desktop/SQLite.swift-update-docs/SQLite.xcodeproj"; sourceTree = "<group>"; };
+		F9FDB16B1FAA08CF00D0F8CC /* icons8-enter_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-enter_pin.png"; path = "../../../../Desktop/icon/icons8-enter_pin.png"; sourceTree = "<group>"; };
+		F9FDB16D1FAA08DA00D0F8CC /* icons8-star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-star.png"; path = "../../../../Desktop/icon/icons8-star.png"; sourceTree = "<group>"; };
+		F9FDB16E1FAA08DA00D0F8CC /* icons8-settings_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-settings_filled.png"; path = "../../../../Desktop/icon/icons8-settings_filled.png"; sourceTree = "<group>"; };
+		F9FDB16F1FAA08DB00D0F8CC /* icons8-futures_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-futures_filled.png"; path = "../../../../Desktop/icon/icons8-futures_filled.png"; sourceTree = "<group>"; };
+		F9FDB1701FAA08DB00D0F8CC /* icons8-geography.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-geography.png"; path = "../../../../Desktop/icon/icons8-geography.png"; sourceTree = "<group>"; };
+		F9FDB1711FAA08DB00D0F8CC /* icons8-mind_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-mind_map.png"; path = "../../../../Desktop/icon/icons8-mind_map.png"; sourceTree = "<group>"; };
+		F9FDB1721FAA08DB00D0F8CC /* icons8-blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-blank.png"; path = "../../../../Desktop/icon/icons8-blank.png"; sourceTree = "<group>"; };
+		F9FDB1731FAA08DB00D0F8CC /* icons8-show_property.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-show_property.png"; path = "../../../../Desktop/icon/icons8-show_property.png"; sourceTree = "<group>"; };
+		F9FDB1741FAA08DB00D0F8CC /* icons8-attention.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-attention.png"; path = "../../../../Desktop/icon/icons8-attention.png"; sourceTree = "<group>"; };
+		F9FDB1751FAA08DB00D0F8CC /* icons8-checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-checkmark.png"; path = "../../../../Desktop/icon/icons8-checkmark.png"; sourceTree = "<group>"; };
+		F9FDB1761FAA08DB00D0F8CC /* icons8-usd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-usd.png"; path = "../../../../Desktop/icon/icons8-usd.png"; sourceTree = "<group>"; };
 		F9FDC1941F978083006D2493 /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
 		F9FDC1961F978091006D2493 /* Personal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Personal.storyboard; sourceTree = "<group>"; };
 		F9FDC1991F9782F4006D2493 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
@@ -221,8 +221,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F96781871F9C75AF0079A4EA /* SQLite.framework in Frameworks */,
-				F96781C51F9CD9CF0079A4EA /* Charts.framework in Frameworks */,
+				F9FDB1671FAA086000D0F8CC /* Charts.framework in Frameworks */,
+				F9FDB1631FAA085A00D0F8CC /* SQLite.framework in Frameworks */,
 				F9F974A81F9B445600B51D23 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,45 +293,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		F96781701F9C75A50079A4EA /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F967817A1F9C75A50079A4EA /* SQLite.framework */,
-				F967817C1F9C75A50079A4EA /* SQLiteTests iOS.xctest */,
-				F967817E1F9C75A50079A4EA /* SQLite.framework */,
-				F96781801F9C75A50079A4EA /* SQLiteTests Mac.xctest */,
-				F96781821F9C75A50079A4EA /* SQLite.framework */,
-				F96781841F9C75A50079A4EA /* SQLiteTests tvOS.xctest */,
-				F96781861F9C75A50079A4EA /* SQLite.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		F96781B71F9CD97E0079A4EA /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F96781BC1F9CD97E0079A4EA /* Charts.framework */,
-				F96781BE1F9CD97E0079A4EA /* ChartsTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		F98F1F811F924FB80001CC12 = {
 			isa = PBXGroup;
 			children = (
-				F96781B61F9CD97E0079A4EA /* Charts.xcodeproj */,
 				F98F1F8C1F924FB80001CC12 /* Cooper */,
 				F98F1FA11F924FB90001CC12 /* CooperTests */,
 				F901E3C41F98CE6B00C51600 /* Frameworks */,
 				F967814C1F9C6FA60079A4EA /* Cooper.app */,
 				F96781681F9C74CC0079A4EA /* CooperTests.xctest */,
-				F967816F1F9C75A50079A4EA /* SQLite.xcodeproj */,
+				F9FDB1421FAA083C00D0F8CC /* Charts.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
 		F98F1F8C1F924FB80001CC12 /* Cooper */ = {
 			isa = PBXGroup;
 			children = (
+				F9FDB14B1FAA084D00D0F8CC /* SQLite.xcodeproj */,
 				F90F14581FA5DA1E00535668 /* LanguageManagement */,
 				F90F14531FA5D9D500535668 /* CustomStyleManagement */,
 				F90F144E1FA5D94900535668 /* CurrencyManagement */,
@@ -408,6 +385,29 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		F9FDB1431FAA083C00D0F8CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F9FDB1481FAA083C00D0F8CC /* Charts.framework */,
+				F9FDB14A1FAA083C00D0F8CC /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F9FDB14C1FAA084D00D0F8CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F9FDB1561FAA084D00D0F8CC /* SQLite.framework */,
+				F9FDB1581FAA084D00D0F8CC /* SQLiteTests iOS.xctest */,
+				F9FDB15A1FAA084D00D0F8CC /* SQLite.framework */,
+				F9FDB15C1FAA084D00D0F8CC /* SQLiteTests Mac.xctest */,
+				F9FDB15E1FAA084D00D0F8CC /* SQLite.framework */,
+				F9FDB1601FAA084D00D0F8CC /* SQLiteTests tvOS.xctest */,
+				F9FDB1621FAA084D00D0F8CC /* SQLite.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		F9FDC1931F97805C006D2493 /* Personal */ = {
 			isa = PBXGroup;
 			children = (
@@ -431,17 +431,17 @@
 		F9FEDFAF1F9370FD0015FB27 /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				F90F14631FA6092000535668 /* icons8-blank.png */,
-				F90F14611FA5FF0B00535668 /* icons8-checkmark.png */,
-				F90F14471FA5D37A00535668 /* icons8-geography.png */,
-				F90F14451FA5D37600535668 /* icons8-attention.png */,
-				F90F14431FA5D37200535668 /* icons8-star.png */,
-				F90F14411FA5D36E00535668 /* icons8-mind_map.png */,
-				F90F143F1FA5D2D800535668 /* icons8-usd.png */,
-				F90F142C1FA5AD7600535668 /* icons8-settings_filled.png */,
-				F90F142A1FA5ACEA00535668 /* icons8-futures_filled.png */,
-				F90F14271FA5AC7E00535668 /* icons8-enter_pin.png */,
-				F90F14261FA5AC7E00535668 /* icons8-show_property.png */,
+				F9FDB1741FAA08DB00D0F8CC /* icons8-attention.png */,
+				F9FDB1721FAA08DB00D0F8CC /* icons8-blank.png */,
+				F9FDB1751FAA08DB00D0F8CC /* icons8-checkmark.png */,
+				F9FDB16F1FAA08DB00D0F8CC /* icons8-futures_filled.png */,
+				F9FDB1701FAA08DB00D0F8CC /* icons8-geography.png */,
+				F9FDB1711FAA08DB00D0F8CC /* icons8-mind_map.png */,
+				F9FDB16E1FAA08DA00D0F8CC /* icons8-settings_filled.png */,
+				F9FDB1731FAA08DB00D0F8CC /* icons8-show_property.png */,
+				F9FDB16D1FAA08DA00D0F8CC /* icons8-star.png */,
+				F9FDB1761FAA08DB00D0F8CC /* icons8-usd.png */,
+				F9FDB16B1FAA08CF00D0F8CC /* icons8-enter_pin.png */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -461,8 +461,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				F967818B1F9C75B40079A4EA /* PBXTargetDependency */,
-				F96781C81F9CD9CF0079A4EA /* PBXTargetDependency */,
+				F9FDB1661FAA085A00D0F8CC /* PBXTargetDependency */,
+				F9FDB16A1FAA086000D0F8CC /* PBXTargetDependency */,
 			);
 			name = Cooper;
 			productName = DailyFinance;
@@ -521,12 +521,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = F96781B71F9CD97E0079A4EA /* Products */;
-					ProjectRef = F96781B61F9CD97E0079A4EA /* Charts.xcodeproj */;
+					ProductGroup = F9FDB1431FAA083C00D0F8CC /* Products */;
+					ProjectRef = F9FDB1421FAA083C00D0F8CC /* Charts.xcodeproj */;
 				},
 				{
-					ProductGroup = F96781701F9C75A50079A4EA /* Products */;
-					ProjectRef = F967816F1F9C75A50079A4EA /* SQLite.xcodeproj */;
+					ProductGroup = F9FDB14C1FAA084D00D0F8CC /* Products */;
+					ProjectRef = F9FDB14B1FAA084D00D0F8CC /* SQLite.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -538,67 +538,67 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		F967817A1F9C75A50079A4EA /* SQLite.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SQLite.framework;
-			remoteRef = F96781791F9C75A50079A4EA /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F967817C1F9C75A50079A4EA /* SQLiteTests iOS.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "SQLiteTests iOS.xctest";
-			remoteRef = F967817B1F9C75A50079A4EA /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F967817E1F9C75A50079A4EA /* SQLite.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SQLite.framework;
-			remoteRef = F967817D1F9C75A50079A4EA /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F96781801F9C75A50079A4EA /* SQLiteTests Mac.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "SQLiteTests Mac.xctest";
-			remoteRef = F967817F1F9C75A50079A4EA /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F96781821F9C75A50079A4EA /* SQLite.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SQLite.framework;
-			remoteRef = F96781811F9C75A50079A4EA /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F96781841F9C75A50079A4EA /* SQLiteTests tvOS.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "SQLiteTests tvOS.xctest";
-			remoteRef = F96781831F9C75A50079A4EA /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F96781861F9C75A50079A4EA /* SQLite.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SQLite.framework;
-			remoteRef = F96781851F9C75A50079A4EA /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F96781BC1F9CD97E0079A4EA /* Charts.framework */ = {
+		F9FDB1481FAA083C00D0F8CC /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Charts.framework;
-			remoteRef = F96781BB1F9CD97E0079A4EA /* PBXContainerItemProxy */;
+			remoteRef = F9FDB1471FAA083C00D0F8CC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		F96781BE1F9CD97E0079A4EA /* ChartsTests.xctest */ = {
+		F9FDB14A1FAA083C00D0F8CC /* ChartsTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = ChartsTests.xctest;
-			remoteRef = F96781BD1F9CD97E0079A4EA /* PBXContainerItemProxy */;
+			remoteRef = F9FDB1491FAA083C00D0F8CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F9FDB1561FAA084D00D0F8CC /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = F9FDB1551FAA084D00D0F8CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F9FDB1581FAA084D00D0F8CC /* SQLiteTests iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests iOS.xctest";
+			remoteRef = F9FDB1571FAA084D00D0F8CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F9FDB15A1FAA084D00D0F8CC /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = F9FDB1591FAA084D00D0F8CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F9FDB15C1FAA084D00D0F8CC /* SQLiteTests Mac.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests Mac.xctest";
+			remoteRef = F9FDB15B1FAA084D00D0F8CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F9FDB15E1FAA084D00D0F8CC /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = F9FDB15D1FAA084D00D0F8CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F9FDB1601FAA084D00D0F8CC /* SQLiteTests tvOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests tvOS.xctest";
+			remoteRef = F9FDB15F1FAA084D00D0F8CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F9FDB1621FAA084D00D0F8CC /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = F9FDB1611FAA084D00D0F8CC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -608,27 +608,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F90F14421FA5D36E00535668 /* icons8-mind_map.png in Resources */,
-				F90F14441FA5D37200535668 /* icons8-star.png in Resources */,
-				F90F14641FA6092100535668 /* icons8-blank.png in Resources */,
-				F90F142D1FA5AD7600535668 /* icons8-settings_filled.png in Resources */,
 				F9FDC1971F978091006D2493 /* Personal.storyboard in Resources */,
-				F90F14461FA5D37600535668 /* icons8-attention.png in Resources */,
 				F9FD23661F96306D005BD2B9 /* InputData.storyboard in Resources */,
 				F9E96D991F9F677900254096 /* Report.storyboard in Resources */,
 				F90F14571FA5D9FF00535668 /* CustomStyle.storyboard in Resources */,
-				F90F14281FA5AC7E00535668 /* icons8-show_property.png in Resources */,
-				F90F14291FA5AC7E00535668 /* icons8-enter_pin.png in Resources */,
+				F9FDB1791FAA08DB00D0F8CC /* icons8-futures_filled.png in Resources */,
 				F90F145C1FA5DA4500535668 /* Language.storyboard in Resources */,
+				F9FDB1781FAA08DB00D0F8CC /* icons8-settings_filled.png in Resources */,
+				F9FDB17E1FAA08DB00D0F8CC /* icons8-attention.png in Resources */,
+				F9FDB17D1FAA08DB00D0F8CC /* icons8-show_property.png in Resources */,
+				F9FDB1801FAA08DB00D0F8CC /* icons8-usd.png in Resources */,
+				F9FDB1771FAA08DB00D0F8CC /* icons8-star.png in Resources */,
 				F90F14521FA5D96C00535668 /* CurrencyManagement.storyboard in Resources */,
-				F90F14481FA5D37A00535668 /* icons8-geography.png in Resources */,
+				F9FDB17A1FAA08DB00D0F8CC /* icons8-geography.png in Resources */,
 				F9FB6A451F979BAA00844BA2 /* Assets.xcassets in Resources */,
-				F90F14401FA5D2D800535668 /* icons8-usd.png in Resources */,
 				F9FD23641F963043005BD2B9 /* View.storyboard in Resources */,
+				F9FDB17B1FAA08DB00D0F8CC /* icons8-mind_map.png in Resources */,
+				F9FDB17C1FAA08DB00D0F8CC /* icons8-blank.png in Resources */,
 				F98F1F931F924FB80001CC12 /* Main.storyboard in Resources */,
-				F90F14621FA5FF0B00535668 /* icons8-checkmark.png in Resources */,
-				F90F142B1FA5ACEA00535668 /* icons8-futures_filled.png in Resources */,
+				F9FDB17F1FAA08DB00D0F8CC /* icons8-checkmark.png in Resources */,
 				F90F144D1FA5D8E200535668 /* CategoryManagement.storyboard in Resources */,
+				F9FDB16C1FAA08CF00D0F8CC /* icons8-enter_pin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,20 +683,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F967818B1F9C75B40079A4EA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "SQLite iOS";
-			targetProxy = F967818A1F9C75B40079A4EA /* PBXContainerItemProxy */;
-		};
-		F96781C81F9CD9CF0079A4EA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Charts;
-			targetProxy = F96781C71F9CD9CF0079A4EA /* PBXContainerItemProxy */;
-		};
 		F98F1FA01F924FB90001CC12 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F98F1F891F924FB80001CC12 /* Cooper */;
 			targetProxy = F98F1F9F1F924FB90001CC12 /* PBXContainerItemProxy */;
+		};
+		F9FDB1661FAA085A00D0F8CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SQLite iOS";
+			targetProxy = F9FDB1651FAA085A00D0F8CC /* PBXContainerItemProxy */;
+		};
+		F9FDB16A1FAA086000D0F8CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = F9FDB1691FAA086000D0F8CC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -827,7 +827,6 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Cooper/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AlenLee.Cooper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -844,7 +843,6 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Cooper/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AlenLee.Cooper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
