@@ -10,6 +10,7 @@ import UIKit
 import SQLite
 
 class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -22,33 +23,37 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     let id = Expression<Int>("id")
     let deleteFlag = Expression<Int>("delete_flag")
-    
-    var selectedDatas :AnySequence<Row>!
 
-
+    var searchDate :String?
     
     let viewService = ViewService()
     
+    var inputDetailModel = [InputDetail]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let searchDate = formatter.string(from: Date())
+        self.searchDate = searchDate
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        print(labelOneArray)
         labelOneArray.removeAll()
         labelTwoArray.removeAll()
         labelThreeArray.removeAll()
         labelFourArray.removeAll()
+        print(labelOneArray)
         getTableViewData()
+        print(labelOneArray)
         self.tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let selectedDatas = viewService.selectTableData()
-        var counter = 0
-        for _ in selectedDatas{
-            counter += 1
-        }
-        return counter
+        return labelOneArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell  {
@@ -115,19 +120,13 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func refresh(_ sender: UIBarButtonItem) {
-        let vc = self.storyboard!.instantiateViewController(withIdentifier: "detailVc")
-        let navController = UINavigationController(rootViewController: vc)
-        self.present(navController, animated:true, completion: nil)
-    }
-    
     func getTableViewData() {
-        let selectedDatas = viewService.selectTableData()
+        inputDetailModel = viewService.selectTableData(searchDate: searchDate!)
         
-        for selectedData in selectedDatas{
-            var tempAmount = String(selectedData[Expression<Int>("amount")])
+        for data in inputDetailModel{
+            var tempAmount = data.amount
             var tempTwoAmout :NSAttributedString?
-            if selectedData[Expression<Int>("type_flag")] == 0 {
+            if Int(data.typeFlag) == 0 {
                 tempAmount = "-"+tempAmount
                 let text = tempAmount
                 let nsText = text as NSString
@@ -158,12 +157,64 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
-            let createTimeFormat = formatter.string(from: selectedData[Expression<Date>("create_time")])
-            self.labelOneArray.append(String(selectedData[Expression<Int>("id")]))
+            let createTimeFormat = formatter.string(from: data.createTime)
+            self.labelOneArray.append(data.id)
             self.labelTwoArray.append(tempTwoAmout!)
-            self.labelThreeArray.append(String(selectedData[Expression<String>("location")]))
+            self.labelThreeArray.append(data.location)
             self.labelFourArray.append(createTimeFormat)
         }
+    }
+    
+    @IBAction func searchByDate(_ sender: UIBarButtonItem) {
+        showInputDialog()
+    }
+
+    func showInputDialog() {
+        //Creating UIAlertController and
+        //Setting title and message for the alert dialog
+        let alertController = UIAlertController(title: "Search", message: "Enter date you want to search", preferredStyle: .alert)
+        
+        //the confirm action taking the inputs
+        let confirmAction = UIAlertAction(title: "search", style: .default) { (_) in
+            
+            //getting the input values from user
+            self.searchDate = alertController.textFields?[0].text
+            
+            self.labelOneArray.removeAll()
+            self.labelTwoArray.removeAll()
+            self.labelThreeArray.removeAll()
+            self.labelFourArray.removeAll()
+            self.getTableViewData()
+            self.tableView.reloadData()
+        }
+        
+        //the cancel action doing nothing
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        
+        //adding textfields to our dialog box
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Example:2017-01-01"
+        }
+        
+        //adding the action to dialogbox
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        //finally presenting the dialog box
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func todayDate(_ sender: UIBarButtonItem) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let searchDate = formatter.string(from: Date())
+        self.searchDate = searchDate
+        self.labelOneArray.removeAll()
+        self.labelTwoArray.removeAll()
+        self.labelThreeArray.removeAll()
+        self.labelFourArray.removeAll()
+        self.getTableViewData()
+        self.tableView.reloadData()
     }
 }
 

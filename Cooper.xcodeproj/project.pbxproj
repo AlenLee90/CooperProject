@@ -18,6 +18,7 @@
 		F90F145C1FA5DA4500535668 /* Language.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F90F145B1FA5DA4500535668 /* Language.storyboard */; };
 		F90F145E1FA5E4A600535668 /* CurrencyManagementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F145D1FA5E4A600535668 /* CurrencyManagementCell.swift */; };
 		F90F14601FA5E72700535668 /* CurrencyManagementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F145F1FA5E72700535668 /* CurrencyManagementService.swift */; };
+		F94D67081FACA2EC006FAD85 /* icons8-search.png in Resources */ = {isa = PBXBuildFile; fileRef = F94D67071FACA2EC006FAD85 /* icons8-search.png */; };
 		F95B68521FA44DB6000715C6 /* InputDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95B68511FA44DB6000715C6 /* InputDetail.swift */; };
 		F95B68541FA44EBE000715C6 /* CommonCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95B68531FA44EBE000715C6 /* CommonCurrency.swift */; };
 		F95B68561FA44F44000715C6 /* CommonCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95B68551FA44F44000715C6 /* CommonCategory.swift */; };
@@ -173,6 +174,7 @@
 		F90F145B1FA5DA4500535668 /* Language.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Language.storyboard; sourceTree = "<group>"; };
 		F90F145D1FA5E4A600535668 /* CurrencyManagementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyManagementCell.swift; sourceTree = "<group>"; };
 		F90F145F1FA5E72700535668 /* CurrencyManagementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyManagementService.swift; sourceTree = "<group>"; };
+		F94D67071FACA2EC006FAD85 /* icons8-search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-search.png"; path = "../../../../Desktop/icon/icons8-search.png"; sourceTree = "<group>"; };
 		F95B68511FA44DB6000715C6 /* InputDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDetail.swift; sourceTree = "<group>"; };
 		F95B68531FA44EBE000715C6 /* CommonCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCurrency.swift; sourceTree = "<group>"; };
 		F95B68551FA44F44000715C6 /* CommonCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCategory.swift; sourceTree = "<group>"; };
@@ -431,6 +433,7 @@
 		F9FEDFAF1F9370FD0015FB27 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				F94D67071FACA2EC006FAD85 /* icons8-search.png */,
 				F9FDB1741FAA08DB00D0F8CC /* icons8-attention.png */,
 				F9FDB1721FAA08DB00D0F8CC /* icons8-blank.png */,
 				F9FDB1751FAA08DB00D0F8CC /* icons8-checkmark.png */,
@@ -617,6 +620,7 @@
 				F9FDB1781FAA08DB00D0F8CC /* icons8-settings_filled.png in Resources */,
 				F9FDB17E1FAA08DB00D0F8CC /* icons8-attention.png in Resources */,
 				F9FDB17D1FAA08DB00D0F8CC /* icons8-show_property.png in Resources */,
+				F94D67081FACA2EC006FAD85 /* icons8-search.png in Resources */,
 				F9FDB1801FAA08DB00D0F8CC /* icons8-usd.png in Resources */,
 				F9FDB1771FAA08DB00D0F8CC /* icons8-star.png in Resources */,
 				F90F14521FA5D96C00535668 /* CurrencyManagement.storyboard in Resources */,

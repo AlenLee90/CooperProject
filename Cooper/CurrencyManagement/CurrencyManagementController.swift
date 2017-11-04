@@ -25,6 +25,9 @@ class CurrencyManagementController: UIViewController, UITableViewDelegate, UITab
 //        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Close", style: .done, target: self, action: Selector(CurrencyManagementController.tappedBackButton))
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        selectTableViewData()
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         selectedDatas = currencyManagementService.selectCurrencyList()
@@ -36,22 +39,22 @@ class CurrencyManagementController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        selectedDatas = currencyManagementService.selectCurrencyList()
+//        selectedDatas = currencyManagementService.selectCurrencyList()
         let cell = tableView.dequeueReusableCell(withIdentifier: "currencyCell", for: indexPath) as! CurrencyManagementCell
-        for data in selectedDatas {
-            labelArray.append(data[Expression<String>("currency_code")])
-            statusArray.append(data[Expression<Int>("status")])
-            currencyIdArray.append(data[Expression<Int>("currency_id")])
-        }
+//        for data in selectedDatas {
+//            labelArray.append(data[Expression<String>("currency_code")])
+//            statusArray.append(data[Expression<Int>("status")])
+//            currencyIdArray.append(data[Expression<Int>("currency_id")])
+//        }
         cell.currencyCellLabel.text = labelArray[indexPath.row]
-        
-        for status in statusArray {
-            if status == 1 {
-                statusImage.append("icons8-checkmark.png")
-            } else {
-                statusImage.append("icons8-blank.png")
-            }
-        }
+//
+//        for status in statusArray {
+//            if status == 1 {
+//                statusImage.append("icons8-checkmark.png")
+//            } else {
+//                statusImage.append("icons8-blank.png")
+//            }
+//        }
         
         cell.currencyCellCheckImage.image =  UIImage(named: statusImage[indexPath.row])?.withRenderingMode(.alwaysOriginal) // deselect image
         
@@ -60,6 +63,11 @@ class CurrencyManagementController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         currencyManagementService.didSelectUpdate(currencyId: currencyIdArray[indexPath.row])
+//        labelArray.removeAll()
+//        statusArray.removeAll()
+//        currencyIdArray.removeAll()
+//        statusImage.removeAll()
+//        selectTableViewData()
         self.dismiss(animated: true, completion: nil)
 //        let vc = self.storyboard!.instantiateViewController(withIdentifier: "currencyVc")
 //        let navController = UINavigationController(rootViewController: vc)
@@ -69,6 +77,23 @@ class CurrencyManagementController: UIViewController, UITableViewDelegate, UITab
     
     func navigationButtonClose(sender: UIBarButtonItem) {
         present( UIStoryboard(name: "Personal", bundle: nil).instantiateViewController(withIdentifier: "personal_nav") as! UINavigationController, animated: false, completion: nil)
+    }
+    
+    func selectTableViewData() {
+        selectedDatas = currencyManagementService.selectCurrencyList()
+        for data in selectedDatas {
+            labelArray.append(data[Expression<String>("currency_code")])
+            statusArray.append(data[Expression<Int>("status")])
+            currencyIdArray.append(data[Expression<Int>("currency_id")])
+        }
+        
+        for status in statusArray {
+            if status == 1 {
+                statusImage.append("icons8-checkmark.png")
+            } else {
+                statusImage.append("icons8-blank.png")
+            }
+        }
     }
     
 }

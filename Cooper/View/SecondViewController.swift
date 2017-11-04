@@ -76,6 +76,9 @@ class SecondViewController: UIViewController {
         timeLabel.text = "Time: "+formatter.string(from: (inputDetailModel?.createTime)!)
         typeLabel.text = "Category: "+(inputDetailModel?.categoryId)!
         amountLabel.text = "Amount: "+(inputDetailModel?.amount)!
+        
+        locationLabel.lineBreakMode = .byWordWrapping
+        locationLabel.numberOfLines = 3
     }
     
     @IBAction func createTable(_ sender: UIButton) {

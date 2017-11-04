@@ -104,7 +104,6 @@ class InputDataController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
         
             let tempCategoryId = String(categoryId!)
             inputDetailModel = InputDetail(id: "",amount: String(Int(amountOfMoney.text!)!),categoryId: tempCategoryId,typeFlag: String(segUi.selectedSegmentIndex),createTime: Date(),updateTime: Date(),currencyId: "7",deleteFlag: "0",comment: "abc",imageAddress: "abc",location: location!)
-        
             var status: Bool = false
 
             if inputDataService.insertData(inputDetailModal: inputDetailModel!) == true {
