@@ -25,6 +25,7 @@
 		F95B68581FA45D89000715C6 /* ReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95B68571FA45D89000715C6 /* ReportService.swift */; };
 		F95B685A1FA46CD1000715C6 /* InputDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95B68591FA46CD1000715C6 /* InputDataService.swift */; };
 		F95B685D1FA4A3E9000715C6 /* ViewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95B685C1FA4A3E9000715C6 /* ViewService.swift */; };
+		F98A583A1FADFA9800F0495A /* ThreeMonthsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98A58391FADFA9800F0495A /* ThreeMonthsViewController.swift */; };
 		F98F1F8E1F924FB80001CC12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98F1F8D1F924FB80001CC12 /* AppDelegate.swift */; };
 		F98F1F901F924FB80001CC12 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98F1F8F1F924FB80001CC12 /* DetailViewController.swift */; };
 		F98F1F931F924FB80001CC12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F98F1F911F924FB80001CC12 /* Main.storyboard */; };
@@ -185,6 +186,7 @@
 		F95B685C1FA4A3E9000715C6 /* ViewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewService.swift; sourceTree = "<group>"; };
 		F967814C1F9C6FA60079A4EA /* Cooper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cooper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96781681F9C74CC0079A4EA /* CooperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CooperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F98A58391FADFA9800F0495A /* ThreeMonthsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeMonthsViewController.swift; sourceTree = "<group>"; };
 		F98F1F8D1F924FB80001CC12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F98F1F8F1F924FB80001CC12 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F98F1F921F924FB80001CC12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -432,6 +434,7 @@
 				F95B68571FA45D89000715C6 /* ReportService.swift */,
 				F9C2CBD61FADE9B000000D7E /* MasterViewController.swift */,
 				F9C2CBD81FADEA8200000D7E /* TwoWeeksViewController.swift */,
+				F98A58391FADFA9800F0495A /* ThreeMonthsViewController.swift */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -678,6 +681,7 @@
 				F95B685A1FA46CD1000715C6 /* InputDataService.swift in Sources */,
 				F9F974AA1F9B983100B51D23 /* DetailTableViewCell.swift in Sources */,
 				F9FDC1951F978083006D2493 /* PersonalViewController.swift in Sources */,
+				F98A583A1FADFA9800F0495A /* ThreeMonthsViewController.swift in Sources */,
 				F95B68541FA44EBE000715C6 /* CommonCurrency.swift in Sources */,
 				F90F14551FA5D9F200535668 /* CustomStyleController.swift in Sources */,
 				F90F142F1FA5C61100535668 /* PersonalCollectionViewCell.swift in Sources */,

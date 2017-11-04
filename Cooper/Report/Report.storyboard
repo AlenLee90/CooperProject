@@ -74,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nw2-e3-pDS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-322" y="143"/>
+            <point key="canvasLocation" x="-322" y="-94"/>
         </scene>
         <!--Master View Controller-->
         <scene sceneID="YAW-gu-7Mu">
@@ -96,10 +96,34 @@
                                     <segue destination="K0A-cY-XUh" kind="embed" id="TNp-fK-sZ4"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Isb-C8-Igi">
+                                <rect key="frame" x="0.0" y="200" width="375" height="467"/>
+                                <connections>
+                                    <segue destination="tWn-zN-edx" kind="embed" id="00X-Xx-FZy"/>
+                                </connections>
+                            </containerView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ovr-0K-BQd">
+                                <rect key="frame" x="0.0" y="64" width="375" height="29"/>
+                                <segments>
+                                    <segment title="Today"/>
+                                    <segment title="Rec 14 days"/>
+                                    <segment title="Rec 3 months"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segChange:" destination="tjs-10-gbV" eventType="valueChanged" id="LuS-kG-d87"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Isb-C8-Igi" firstAttribute="bottom" secondItem="u1C-dd-Q1L" secondAttribute="bottom" id="0m8-5p-8MP"/>
+                            <constraint firstItem="Ovr-0K-BQd" firstAttribute="leading" secondItem="u1C-dd-Q1L" secondAttribute="leading" id="1we-hD-t6s"/>
+                            <constraint firstItem="Isb-C8-Igi" firstAttribute="height" secondItem="Mnv-Sq-0hY" secondAttribute="height" multiplier="0.7" id="GvK-8k-ukb"/>
+                            <constraint firstItem="Isb-C8-Igi" firstAttribute="trailing" secondItem="u1C-dd-Q1L" secondAttribute="trailing" id="QnY-yX-rQ8"/>
                             <constraint firstItem="gDm-GI-yuW" firstAttribute="trailing" secondItem="u1C-dd-Q1L" secondAttribute="trailing" id="TGL-ex-zvj"/>
+                            <constraint firstItem="Ovr-0K-BQd" firstAttribute="top" secondItem="u1C-dd-Q1L" secondAttribute="top" id="VeY-Ix-JMZ"/>
+                            <constraint firstItem="Isb-C8-Igi" firstAttribute="leading" secondItem="u1C-dd-Q1L" secondAttribute="leading" id="Y54-rD-61l"/>
+                            <constraint firstItem="Ovr-0K-BQd" firstAttribute="trailing" secondItem="u1C-dd-Q1L" secondAttribute="trailing" id="aqY-f5-1fQ"/>
                             <constraint firstItem="gDm-GI-yuW" firstAttribute="leading" secondItem="u1C-dd-Q1L" secondAttribute="leading" id="cjr-lo-uVh"/>
                             <constraint firstItem="kF5-eI-Ro2" firstAttribute="leading" secondItem="u1C-dd-Q1L" secondAttribute="leading" id="clE-iP-Fzh"/>
                             <constraint firstItem="gDm-GI-yuW" firstAttribute="height" secondItem="Mnv-Sq-0hY" secondAttribute="height" multiplier="0.7" id="f9P-Th-pvl"/>
@@ -112,21 +136,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="43W-h8-vtc">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Ovr-0K-BQd">
-                            <rect key="frame" x="127" y="7.5" width="121" height="29"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="First"/>
-                                <segment title="Second"/>
-                            </segments>
-                            <connections>
-                                <action selector="segChange:" destination="tjs-10-gbV" eventType="valueChanged" id="LuS-kG-d87"/>
-                            </connections>
-                        </segmentedControl>
                     </navigationItem>
                     <connections>
                         <outlet property="oneContainer" destination="kF5-eI-Ro2" id="Cqs-rZ-SqB"/>
                         <outlet property="segUi" destination="Ovr-0K-BQd" id="nhe-HR-wlb"/>
+                        <outlet property="threeContainer" destination="Isb-C8-Igi" id="bJ2-Kk-n1E"/>
                         <outlet property="twoContainer" destination="gDm-GI-yuW" id="AU5-Oa-nDT"/>
                     </connections>
                 </viewController>
@@ -142,8 +156,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="467"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQp-Em-H8n">
-                                <rect key="frame" x="119" y="203" width="138" height="113"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1oc-Be-iAB" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="467"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1oc-Be-iAB" firstAttribute="leading" secondItem="qwQ-Zx-r9D" secondAttribute="leading" id="7sD-1H-uBH"/>
+                            <constraint firstItem="1oc-Be-iAB" firstAttribute="trailing" secondItem="qwQ-Zx-r9D" secondAttribute="trailing" id="DGy-IY-QJe"/>
+                            <constraint firstItem="1oc-Be-iAB" firstAttribute="top" secondItem="qwQ-Zx-r9D" secondAttribute="top" id="LaY-dL-GbQ"/>
+                            <constraint firstItem="1oc-Be-iAB" firstAttribute="bottom" secondItem="qwQ-Zx-r9D" secondAttribute="bottom" id="jET-Wh-ZXM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qwQ-Zx-r9D"/>
+                    </view>
+                    <connections>
+                        <outlet property="barChart" destination="1oc-Be-iAB" id="ciM-n3-854"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J4o-kp-era" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-322.39999999999998" y="451.12443778110946"/>
+        </scene>
+        <!--Three Months View Controller-->
+        <scene sceneID="OGy-VA-eFR">
+            <objects>
+                <viewController id="tWn-zN-edx" customClass="ThreeMonthsViewController" customModule="Cooper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gXa-ds-3BJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="467"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="testTwo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRp-5K-4eQ">
+                                <rect key="frame" x="111" y="201" width="152" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -151,12 +195,12 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="qwQ-Zx-r9D"/>
+                        <viewLayoutGuide key="safeArea" id="81L-8W-vgZ"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="J4o-kp-era" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ev-4m-9Md" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-322.39999999999998" y="825.33733133433293"/>
+            <point key="canvasLocation" x="-322.39999999999998" y="1105.9970014992505"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ak5-Lh-fO1">

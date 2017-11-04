@@ -22,9 +22,6 @@ class ReportViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        barChartUpdate()
-//        pieChartUpdate()
-//        selectResultData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,22 +29,6 @@ class ReportViewController: UIViewController {
         selectResultData()
     }
 
-//    func barChartUpdate () {
-//        let entry1 = BarChartDataEntry(x: 1.0, y: Double(19.0))
-//        let entry2 = BarChartDataEntry(x: 2.0, y: Double(50.0))
-//        let entry3 = BarChartDataEntry(x: 3.0, y: Double(88.7))
-//        let dataSet = BarChartDataSet(values: [entry1, entry2, entry3], label: "Widgets Type")
-//        let data = BarChartData(dataSets: [dataSet])
-//        barChart.data = data
-//        barChart.chartDescription?.text = "Number of Widgets by Type"
-//
-//        //All other additions to this function will go here
-//        dataSet.colors = ChartColorTemplates.joyful()
-//        dataSet.valueColors = [UIColor.black]
-//        //This must stay at end of function
-//        barChart.notifyDataSetChanged()
-//    }
-    
     func pieChartUpdate () {
 
         let paymentDataSet = PieChartDataSet(values: reportService.getPaymentData(), label: "Payments")

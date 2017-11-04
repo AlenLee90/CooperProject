@@ -11,11 +11,15 @@ import UIKit
 class MasterViewController: UIViewController {
     @IBOutlet weak var oneContainer: UIView!
     @IBOutlet weak var twoContainer: UIView!
+    @IBOutlet weak var threeContainer: UIView!
     
     @IBOutlet weak var segUi: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.oneContainer.isHidden = false
+        self.twoContainer.isHidden = true
+        self.threeContainer.isHidden = true
 
     }
 
@@ -26,10 +30,17 @@ class MasterViewController: UIViewController {
         case 0:
             self.oneContainer.isHidden = false
             self.twoContainer.isHidden = true
+            self.threeContainer.isHidden = true
             break
         case 1:
             self.oneContainer.isHidden = true
             self.twoContainer.isHidden = false
+            self.threeContainer.isHidden = true
+            break
+        case 2:
+            self.oneContainer.isHidden = true
+            self.twoContainer.isHidden = true
+            self.threeContainer.isHidden = false
             break
         default:
             break

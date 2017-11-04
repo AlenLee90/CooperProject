@@ -68,7 +68,6 @@ class ReportService {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         let myString = formatter.string(from: Date())
-//        let myString = "2017-11-01"
         
         var paymentEntryArray = [PieChartDataEntry]()
     

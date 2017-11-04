@@ -41,14 +41,11 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print(labelOneArray)
         labelOneArray.removeAll()
         labelTwoArray.removeAll()
         labelThreeArray.removeAll()
         labelFourArray.removeAll()
-        print(labelOneArray)
         getTableViewData()
-        print(labelOneArray)
         self.tableView.reloadData()
     }
     
