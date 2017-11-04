@@ -31,6 +31,8 @@
 		F98F1FA31F924FB90001CC12 /* CooperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98F1FA21F924FB90001CC12 /* CooperTests.swift */; };
 		F9B0E8B11F94DD2B00E08801 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B0E8B01F94DD2B00E08801 /* TabBarController.swift */; };
 		F9B0E8B31F94DDBF00E08801 /* InputDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B0E8B21F94DDBF00E08801 /* InputDataController.swift */; };
+		F9C2CBD71FADE9B000000D7E /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C2CBD61FADE9B000000D7E /* MasterViewController.swift */; };
+		F9C2CBD91FADEA8200000D7E /* TwoWeeksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C2CBD81FADEA8200000D7E /* TwoWeeksViewController.swift */; };
 		F9E96D991F9F677900254096 /* Report.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9E96D981F9F677900254096 /* Report.storyboard */; };
 		F9F974A81F9B445600B51D23 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F974A11F9B443400B51D23 /* CoreLocation.framework */; };
 		F9F974AA1F9B983100B51D23 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F974A91F9B983100B51D23 /* DetailTableViewCell.swift */; };
@@ -191,6 +193,8 @@
 		F98F1FA41F924FB90001CC12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9B0E8B01F94DD2B00E08801 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		F9B0E8B21F94DDBF00E08801 /* InputDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDataController.swift; sourceTree = "<group>"; };
+		F9C2CBD61FADE9B000000D7E /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		F9C2CBD81FADEA8200000D7E /* TwoWeeksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoWeeksViewController.swift; sourceTree = "<group>"; };
 		F9E96D981F9F677900254096 /* Report.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Report.storyboard; sourceTree = "<group>"; };
 		F9F974A11F9B443400B51D23 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F9F974A91F9B983100B51D23 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -426,6 +430,8 @@
 				F9E96D981F9F677900254096 /* Report.storyboard */,
 				F9FDC1991F9782F4006D2493 /* ReportViewController.swift */,
 				F95B68571FA45D89000715C6 /* ReportService.swift */,
+				F9C2CBD61FADE9B000000D7E /* MasterViewController.swift */,
+				F9C2CBD81FADEA8200000D7E /* TwoWeeksViewController.swift */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -658,6 +664,7 @@
 				F95B68521FA44DB6000715C6 /* InputDetail.swift in Sources */,
 				F90F14501FA5D96000535668 /* CurrencyManagementController.swift in Sources */,
 				F9FD23691F963ADD005BD2B9 /* LoginViewController.swift in Sources */,
+				F9C2CBD71FADE9B000000D7E /* MasterViewController.swift in Sources */,
 				F9FEDFB41F9385830015FB27 /* SecondViewController.swift in Sources */,
 				F9B0E8B11F94DD2B00E08801 /* TabBarController.swift in Sources */,
 				F98F1F901F924FB80001CC12 /* DetailViewController.swift in Sources */,
@@ -665,6 +672,7 @@
 				F95B68561FA44F44000715C6 /* CommonCategory.swift in Sources */,
 				F9B0E8B31F94DDBF00E08801 /* InputDataController.swift in Sources */,
 				F90F14601FA5E72700535668 /* CurrencyManagementService.swift in Sources */,
+				F9C2CBD91FADEA8200000D7E /* TwoWeeksViewController.swift in Sources */,
 				F98F1F8E1F924FB80001CC12 /* AppDelegate.swift in Sources */,
 				F90F145A1FA5DA3700535668 /* LanguageController.swift in Sources */,
 				F95B685A1FA46CD1000715C6 /* InputDataService.swift in Sources */,
