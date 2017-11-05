@@ -13,6 +13,8 @@ class TwoWeeksViewController: UIViewController {
     
     @IBOutlet weak var barChart: BarChartView!
     
+    let reportService = ReportService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,26 +26,39 @@ class TwoWeeksViewController: UIViewController {
     
 
     func barChartUpdate () {
-        let entry1 = BarChartDataEntry(x: 1.0, y: Double(19.0))
-        let entry2 = BarChartDataEntry(x: 2.0, y: Double(50.0))
-        let entry3 = BarChartDataEntry(x: 3.0, y: Double(100.7))
-        let entry4 = BarChartDataEntry(x: 4.0, y: Double(19.0))
-        let entry5 = BarChartDataEntry(x: 5.0, y: Double(50.0))
-        let entry6 = BarChartDataEntry(x: 6.0, y: Double(80.7))
-        let entry7 = BarChartDataEntry(x: 7.0, y: Double(19.0))
-        let entry8 = BarChartDataEntry(x: 8.0, y: Double(50.0))
-        let entry9 = BarChartDataEntry(x: 9.0, y: Double(100.7))
-        let entry10 = BarChartDataEntry(x: 10.0, y: Double(19.0))
-        let entry11 = BarChartDataEntry(x: 11.0, y: Double(50.0))
-        let entry12 = BarChartDataEntry(x: 12.0, y: Double(80.7))
-        let entry13 = BarChartDataEntry(x: 13.0, y: Double(50.0))
-        let entry14 = BarChartDataEntry(x: 14.0, y: Double(80.7))
-        let dataSet = BarChartDataSet(values: [entry1, entry2, entry3,entry4,entry5,entry6,entry7,entry8,entry9,entry10,entry11,entry12,entry13,entry14], label: "")
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd"
+        var xAxis = [String]()
+        var calcuDate = Calendar.current.date(byAdding: .day, value: -13, to: Date())
+        for _ in 1...14 {
+            let calculDate = formatter.string(from: calcuDate!)
+            xAxis.append(calculDate)
+            calcuDate = Calendar.current.date(byAdding: .day, value: +1, to: calcuDate!)
+        }
+        let dataSet = BarChartDataSet(values: reportService.getTwoWeeks(), label: "")
+        barChart.chartDescription?.text = "Expenditure"
+        if reportService.getPaymentData().isEmpty {
+            barChart.chartDescription?.text = "Expenditure\n(No data)"
+        }
+        barChart.chartDescription?.font = UIFont(name: "Futura", size: 15)!
+        barChart.chartDescription?.xOffset = barChart.frame.width * (1/4)
+        barChart.chartDescription?.yOffset = barChart.frame.height * (7/10)
+        barChart.chartDescription?.textAlign = NSTextAlignment.left
+//        barChart.chartDescription?.text = "test"
+//        barChart.chartDescription?.position?.x = 10
+//        barChart.chartDescription?.position?.y = 10
+        barChart.xAxis.labelPosition = .bottom
+        barChart.rightAxis.enabled = false
+        barChart.xAxis.axisMinimum = 0.0
+        barChart.xAxis.axisMaximum = 13.0
+        barChart.xAxis.granularity = 2.0
+        barChart.xAxis.granularityEnabled = true
+        barChart.xAxis.labelCount = 14
+        barChart.fitBars = true
         let data = BarChartData(dataSets: [dataSet])
         barChart.data = data
-        let months = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12","13","14"]
-        barChart.xAxis.valueFormatter = IndexAxisValueFormatter(values:months)
-        barChart.chartDescription?.text = ""
+        barChart.xAxis.valueFormatter = IndexAxisValueFormatter(values:xAxis)
+//        barChart.drawValueAboveBarEnabled = false
     
         //All other additions to this function will go here
         dataSet.colors = ChartColorTemplates.joyful()
