@@ -12,23 +12,28 @@ class InputDetail {
     var id: String
     var amount: String
     var categoryId: String
+    var categoryName: String
     var typeFlag: String
     var createTime: Date
     var updateTime: Date
     var currencyId: String
+    var currencyCode: String
     var deleteFlag: String
     var comment: String
     var imageAddress: String
     var location: String
+
     
-    init(id: String, amount: String, categoryId: String, typeFlag: String, createTime: Date, updateTime: Date, currencyId: String, deleteFlag: String, comment: String, imageAddress: String, location: String) {
+    init(id: String, amount: String, categoryId: String, categoryName: String, typeFlag: String, createTime: Date, updateTime: Date, currencyId: String,currencyCode: String, deleteFlag: String, comment: String, imageAddress: String, location: String) {
         self.id = id
         self.amount = amount
         self.categoryId = categoryId
+        self.categoryName = categoryName
         self.typeFlag = typeFlag
         self.createTime = createTime
         self.updateTime = updateTime
         self.currencyId = currencyId
+        self.currencyCode = currencyCode
         self.deleteFlag = deleteFlag
         self.comment = comment
         self.imageAddress = imageAddress

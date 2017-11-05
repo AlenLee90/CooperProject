@@ -20,6 +20,7 @@ class CurrencyManagementService {
     let deleteFlag = Expression<Int>("delete_flag")
     let status = Expression<Int>("status")
     let currencyId = Expression<Int>("currency_id")
+    let currencyCode = Expression<String>("currency_code")
     
     func selectCurrencyList() -> AnySequence<Row> {
         self.database = DatabaseHelper.postRequest()
@@ -51,6 +52,36 @@ class CurrencyManagementService {
             print(error)
         }
         
+    }
+    
+    func selectCurrencyCode() -> String {
+        self.database = DatabaseHelper.postRequest()
+        var currencyCode :String?
+        do{
+            let selectedData = self.currencyTable.filter(self.deleteFlag == 0 && self.status == 1)
+            let selectedDatas = try self.database.prepare(selectedData)
+            for data in selectedDatas {
+                currencyCode = data[Expression<String>("currency_code")]
+            }
+        }catch{
+            print(error)
+        }
+        return currencyCode!
+    }
+    
+    func selectCurrencyId(currencyCode :String) -> String {
+        self.database = DatabaseHelper.postRequest()
+        var currencyId :String?
+        do{
+            let selectedData = self.currencyTable.filter(self.deleteFlag == 0 && self.currencyCode == currencyCode)
+            let selectedDatas = try self.database.prepare(selectedData)
+            for data in selectedDatas {
+                currencyId = String(data[Expression<Int>("currency_id")])
+            }
+        }catch{
+            print(error)
+        }
+        return currencyId!
     }
     
 }

@@ -29,20 +29,23 @@ class TwoWeeksViewController: UIViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "MM/dd"
         var xAxis = [String]()
-        var calcuDate = Calendar.current.date(byAdding: .day, value: -13, to: Date())
-        for _ in 1...14 {
-            let calculDate = formatter.string(from: calcuDate!)
-            xAxis.append(calculDate)
-            calcuDate = Calendar.current.date(byAdding: .day, value: +1, to: calcuDate!)
-        }
+        var calcuDate = Calendar.current.date(byAdding: .day, value: -(reportService.getTwoWeeks().count - 2), to: Date())
         let dataSet = BarChartDataSet(values: reportService.getTwoWeeks(), label: "")
+        let noZeroFormatter = NumberFormatter()
+        noZeroFormatter.zeroSymbol = ""
+        dataSet.valueFormatter = DefaultValueFormatter(formatter: noZeroFormatter)
         barChart.chartDescription?.text = "Expenditure"
         if reportService.getPaymentData().isEmpty {
             barChart.chartDescription?.text = "Expenditure\n(No data)"
         }
+        for _ in 1...15 {
+            let calculDate = formatter.string(from: calcuDate!)
+            xAxis.append(calculDate)
+            calcuDate = Calendar.current.date(byAdding: .day, value: +1, to: calcuDate!)
+        }
         barChart.chartDescription?.font = UIFont(name: "Futura", size: 15)!
         barChart.chartDescription?.xOffset = barChart.frame.width * (1/4)
-        barChart.chartDescription?.yOffset = barChart.frame.height * (7/10)
+        barChart.chartDescription?.yOffset = barChart.frame.height * (14/20)
         barChart.chartDescription?.textAlign = NSTextAlignment.left
 //        barChart.chartDescription?.text = "test"
 //        barChart.chartDescription?.position?.x = 10
@@ -50,15 +53,16 @@ class TwoWeeksViewController: UIViewController {
         barChart.xAxis.labelPosition = .bottom
         barChart.rightAxis.enabled = false
         barChart.xAxis.axisMinimum = 0.0
-        barChart.xAxis.axisMaximum = 13.0
+        barChart.xAxis.axisMaximum = 14.0
         barChart.xAxis.granularity = 2.0
         barChart.xAxis.granularityEnabled = true
-        barChart.xAxis.labelCount = 14
+        barChart.xAxis.labelCount = 15
         barChart.fitBars = true
         let data = BarChartData(dataSets: [dataSet])
         barChart.data = data
         barChart.xAxis.valueFormatter = IndexAxisValueFormatter(values:xAxis)
 //        barChart.drawValueAboveBarEnabled = false
+        
     
         //All other additions to this function will go here
         dataSet.colors = ChartColorTemplates.joyful()

@@ -29,6 +29,8 @@ class SecondViewController: UIViewController {
     
     var inputDetailModel :InputDetail?
     
+    var detailInputDetailModel = [InputDetail]()
+    
     var database: Connection!
     let commonCurrencyTable = Table("common_currency")
     let currencyId = Expression<Int>("currency_id")
@@ -52,30 +54,47 @@ class SecondViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.database = DatabaseHelper.postRequest()
+//        self.database = DatabaseHelper.postRequest()
         
-        for detailList in viewService.selectTableDetailData(segueData: segueData!) {
-            inputDetailModel = InputDetail(
-                id: String(detailList[Expression<Int>("id")]),
-                amount: String(detailList[Expression<Int>("amount")]),
-                categoryId: String(detailList[Expression<Int>("category_id")]),
-                typeFlag: String(detailList[Expression<Int>("type_flag")]),
-                createTime: detailList[Expression<Date>("create_time")],
-                updateTime: detailList[Expression<Date>("update_time")],
-                currencyId: String(detailList[Expression<Int>("currency_id")]),
-                deleteFlag: String(detailList[Expression<Int>("delete_flag")]),
-                comment: detailList[Expression<String>("comment")],
-                imageAddress: detailList[Expression<String>("image_address")],
-                location: detailList[Expression<String>("location")])
-        }
+//        for detailList in viewService.selectTableDetailData(segueData: segueData!) {
+//            inputDetailModel = InputDetail(
+//                id: String(detailList[Expression<Int>("id")]),
+//                amount: String(detailList[Expression<Int>("amount")]),
+//                categoryId: String(detailList[Expression<Int>("category_id")]),
+//                typeFlag: String(detailList[Expression<Int>("type_flag")]),
+//                createTime: detailList[Expression<Date>("create_time")],
+//                updateTime: detailList[Expression<Date>("update_time")],
+//                currencyId: String(detailList[Expression<Int>("currency_id")]),
+//                currencyCode: "",
+//                deleteFlag: String(detailList[Expression<Int>("delete_flag")]),
+//                comment: detailList[Expression<String>("comment")],
+//                imageAddress: detailList[Expression<String>("image_address")],
+//                location: detailList[Expression<String>("location")])
+//        }
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+//
+//        locationLabel.text = "Location: "+(inputDetailModel?.location)!
+//        currencyLabel.text = "Currency: "+(inputDetailModel?.currencyId)!
+//        timeLabel.text = "Time: "+formatter.string(from: (inputDetailModel?.createTime)!)
+//        typeLabel.text = "Category: "+(inputDetailModel?.categoryId)!
+//        amountLabel.text = "Amount: "+(inputDetailModel?.amount)!
+//
+//        locationLabel.lineBreakMode = .byWordWrapping
+//        locationLabel.numberOfLines = 3
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        detailInputDetailModel = viewService.selectTableDetailData(segueData: segueData!)
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-
-        locationLabel.text = "Location: "+(inputDetailModel?.location)!
-        currencyLabel.text = "Currency: "+(inputDetailModel?.currencyId)!
-        timeLabel.text = "Time: "+formatter.string(from: (inputDetailModel?.createTime)!)
-        typeLabel.text = "Category: "+(inputDetailModel?.categoryId)!
-        amountLabel.text = "Amount: "+(inputDetailModel?.amount)!
+        for data in detailInputDetailModel{
+            locationLabel.text = "Location: "+data.location
+            currencyLabel.text = "Currency: "+data.currencyCode
+            timeLabel.text = "Time: "+formatter.string(from: data.createTime)
+            typeLabel.text = "Category: "+data.categoryName
+            amountLabel.text = "Amount: "+data.amount
+        }
         
         locationLabel.lineBreakMode = .byWordWrapping
         locationLabel.numberOfLines = 3

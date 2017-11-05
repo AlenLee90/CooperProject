@@ -147,7 +147,7 @@ class ReportService {
         var calcuDate = Calendar.current.date(byAdding: .day, value: -13, to: Date())
         var xValue = 0
         
-        for _ in 1...14 {
+        for _ in 1...15 {
             let calculDate = formatter.string(from: calcuDate!)
             do{
                 let stmt = try self.database.prepare("SELECT ifnull(sum(amount),0) as amount FROM input_detail where type_flag='0' and delete_flag='0' and create_time like '\(calculDate)%'")
@@ -173,12 +173,9 @@ class ReportService {
             }catch{
                 print(error)
             }
-            let result = Int(paymentAmount!)! + (-Int(incomeAmount!)!)
-            if result != 0 {
             let entry = BarChartDataEntry(x: Double(xValue), y: (Double(paymentAmount!)! + (-Double(incomeAmount!)!)))
             twoWeeksEntryArray.append(entry)
             xValue = xValue + 1
-            }
         calcuDate = Calendar.current.date(byAdding: .day, value: +1, to: calcuDate!)
         }
         

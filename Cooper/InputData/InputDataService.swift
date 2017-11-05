@@ -15,6 +15,9 @@ class InputDataService {
     
     var database : Connection!
     let categoryTable = Table("common_category")
+    let currencyTable = Table("common_currency")
+    let status = Expression<Int?>("status")
+    let deleteFlag = Expression<Int?>("delete_flag")
     
     func selectPickerList() -> AnySequence<Row> {
         self.database = DatabaseHelper.postRequest()

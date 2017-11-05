@@ -53,15 +53,28 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return labelOneArray.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50.0
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell  {
         
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DetailTableViewCell
-
-//        cell.labelOne.text = labelOneArray[indexPath.row]
-        cell.labelOne.attributedText = labelTwoArray[indexPath.row]
-//        cell.labelThree.text = labelThreeArray[indexPath.row]
-        cell.labelTwo.text = labelFourArray[indexPath.row]
+        cell.labelLeft.textAlignment = NSTextAlignment.center
+        cell.labelRight.textAlignment = NSTextAlignment.center
+        cell.labelLeft.baselineAdjustment = .alignCenters
+        cell.labelRight.baselineAdjustment = .alignCenters
+        
+        cell.labelLeft.attributedText = labelTwoArray[indexPath.row]
+        cell.labelRight.text = labelFourArray[indexPath.row]
+        cell.backgroundColor = UIColor(red:0.97, green:0.99, blue:1.00, alpha:1.0)
+        cell.layer.cornerRadius = 10
+        cell.layer.borderColor = UIColor(red:0.88, green:0.91, blue:0.91, alpha:1.0).cgColor
+        cell.layer.borderWidth = 0.5
+        
+        cell.labelLeft.attributedText = labelTwoArray[indexPath.row]
+        cell.labelRight.text = labelFourArray[indexPath.row]
         
         return cell
     }

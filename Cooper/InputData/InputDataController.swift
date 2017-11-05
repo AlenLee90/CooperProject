@@ -12,20 +12,16 @@ import CoreLocation
 
 class InputDataController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,CLLocationManagerDelegate {
     
+    @IBOutlet weak var currencyLabel: UILabel!
     @IBOutlet weak var segUi: UISegmentedControl!
-    
     @IBOutlet weak var amountOfMoney: UITextField!
-    
     @IBOutlet weak var picker: UIPickerView!
-    
     @IBOutlet weak var inputButton: UIButton!
     
     let manager = CLLocationManager()
-
     var database: Connection!
     let categoryTable = Table("common_category")
     let currency = ["Food","Drink","Game","Clothes"]
-    
     let categoryName = Expression<String>("category_name")
     
     struct pickerStruct {
@@ -42,9 +38,10 @@ class InputDataController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
     var location :String?
     
     let inputDataService = InputDataService()
-    
+    let currencyService = CurrencyManagementService()
     var inputDetailModel :InputDetail?
-
+    var currencyCode :String?
+    var currencyId :String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +61,26 @@ class InputDataController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.currencyCode = currencyService.selectCurrencyCode()
+        self.currencyId = currencyService.selectCurrencyId(currencyCode: self.currencyCode!)
+        var attributedString :NSAttributedString?
+//        let text = currencyCode
+//        let nsText = text as NSString
+//        let textRange = NSMakeRange(nsText.length, nsText.length)
+        let myRange = NSRange(location: 10, length: (currencyCode?.count)!)
+        currencyCode = "Currency: " + currencyCode!
+        let myMutableString = NSMutableAttributedString(
+            string: currencyCode!,
+            attributes: [:])
+        myMutableString.addAttribute(
+            NSAttributedStringKey.foregroundColor,
+            value: UIColor.red,
+            range: myRange)
+        attributedString = myMutableString
+        currencyLabel.attributedText = attributedString
+    }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -81,17 +98,6 @@ class InputDataController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerData.count
     }
-
-    @IBAction func segmentChange(_ sender: UISegmentedControl) {
-        switch segUi.selectedSegmentIndex {
-        case 0:
-            print("a")
-        case 1:
-            print("b")
-        default:
-            break
-        }
-    }
     
     @IBAction func insertData(_ sender: UIButton) {
         var errorFlag :Bool = false
@@ -99,11 +105,23 @@ class InputDataController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
             createAlert(title: "Attention", message: "You do not input amount!")
             errorFlag = true
         }
-        
         if errorFlag == false {
         
             let tempCategoryId = String(categoryId!)
-            inputDetailModel = InputDetail(id: "",amount: String(Int(amountOfMoney.text!)!),categoryId: tempCategoryId,typeFlag: String(segUi.selectedSegmentIndex),createTime: Date(),updateTime: Date(),currencyId: "7",deleteFlag: "0",comment: "abc",imageAddress: "abc",location: location!)
+            inputDetailModel = InputDetail(
+                id: "",
+                amount: String(Int(amountOfMoney.text!)!),
+                categoryId: tempCategoryId,
+                categoryName: "",
+                typeFlag: String(segUi.selectedSegmentIndex),
+                createTime: Date(),
+                updateTime: Date(),
+                currencyId: self.currencyId!,
+                currencyCode: "",
+                deleteFlag: "0",
+                comment: "",
+                imageAddress: "",
+                location: location!)
             var status: Bool = false
 
             if inputDataService.insertData(inputDetailModal: inputDetailModel!) == true {
