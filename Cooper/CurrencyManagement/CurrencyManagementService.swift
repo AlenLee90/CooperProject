@@ -15,7 +15,7 @@ class CurrencyManagementService {
     
     var selectedDatas :AnySequence<Row>!
     
-    let currencyTable = Table("common_currency")
+    let currencyTable = Table("currencies")
     
     let deleteFlag = Expression<Int>("delete_flag")
     let status = Expression<Int>("status")

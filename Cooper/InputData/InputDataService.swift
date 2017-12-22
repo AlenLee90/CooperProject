@@ -14,8 +14,7 @@ class InputDataService {
     
     
     var database : Connection!
-    let categoryTable = Table("common_category")
-    let currencyTable = Table("common_currency")
+    let categoryTable = Table("categories")
     let status = Expression<Int?>("status")
     let deleteFlag = Expression<Int?>("delete_flag")
     

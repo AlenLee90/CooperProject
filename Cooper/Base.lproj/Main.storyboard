@@ -1,18 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13528" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wEJ-GP-xLx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wEJ-GP-xLx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13526"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Guide View Controller-->
+        <scene sceneID="fGH-Ct-1GY">
+            <objects>
+                <viewController storyboardIdentifier="GuideViewController" id="yVf-b4-w1z" customClass="GuideViewController" customModule="Cooper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xpv-Ep-STM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="jWA-gE-Ap0">
+                                <rect key="frame" x="145" y="575" width="84" height="37"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BW7-Og-uCu">
+                                <rect key="frame" x="118" y="628" width="139" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="start"/>
+                                <connections>
+                                    <action selector="startPresent:" destination="yVf-b4-w1z" eventType="touchUpInside" id="y2T-H9-TUr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BW7-Og-uCu" firstAttribute="top" secondItem="jWA-gE-Ap0" secondAttribute="bottom" constant="16" id="2K4-Ig-h1p"/>
+                            <constraint firstItem="xdN-Yc-ovY" firstAttribute="trailing" secondItem="jWA-gE-Ap0" secondAttribute="trailing" constant="146" id="7GW-0i-6Ht"/>
+                            <constraint firstItem="xdN-Yc-ovY" firstAttribute="trailing" secondItem="BW7-Og-uCu" secondAttribute="trailing" constant="118" id="CqF-kt-ib4"/>
+                            <constraint firstItem="BW7-Og-uCu" firstAttribute="bottom" secondItem="xdN-Yc-ovY" secondAttribute="bottom" id="JuZ-ZE-GjK"/>
+                            <constraint firstItem="BW7-Og-uCu" firstAttribute="leading" secondItem="xdN-Yc-ovY" secondAttribute="leading" constant="118" id="sE2-lb-9aD"/>
+                            <constraint firstItem="jWA-gE-Ap0" firstAttribute="leading" secondItem="xdN-Yc-ovY" secondAttribute="leading" constant="145" id="tfG-C0-XWh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xdN-Yc-ovY"/>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="jWA-gE-Ap0" id="KEU-XF-B97"/>
+                        <outlet property="startButton" destination="BW7-Og-uCu" id="O60-ng-7gq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oH8-AG-pnG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4183.1999999999998" y="-897.30134932533736"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="xp5-6w-kda">
             <objects>
-                <tabBarController id="wEJ-GP-xLx" customClass="TabBarController" customModule="Cooper" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" id="wEJ-GP-xLx" customClass="TabBarController" customModule="Cooper" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1a0-8H-2nr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
