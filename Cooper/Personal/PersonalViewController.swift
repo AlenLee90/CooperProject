@@ -10,6 +10,7 @@ import UIKit
 
 class PersonalViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
 
+    let loginService = LoginService()
     let currencyManagementController = CurrencyManagementController()
     let collectionName :[String] = ["Set Currency","Set Category","Set View Style","Set Cordon","Set Language"]
     let collectionPicture :[String] = ["icons8-usd.png","icons8-mind_map.png","icons8-star.png","icons8-attention.png","icons8-geography.png"]
@@ -35,4 +36,8 @@ class PersonalViewController: UIViewController,UICollectionViewDelegate,UICollec
         
     }
 
+    @IBAction func logout(_ sender: UIBarButtonItem) {
+        loginService.logout()
+        present( UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") , animated: true, completion: nil)
+    }
 }

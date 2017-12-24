@@ -17,6 +17,7 @@ class InputDataService {
     let categoryTable = Table("categories")
     let status = Expression<Int?>("status")
     let deleteFlag = Expression<Int?>("delete_flag")
+    let tokenTable = Table("access_token")
     
     func selectPickerList() -> AnySequence<Row> {
         self.database = DatabaseHelper.postRequest()
@@ -52,6 +53,20 @@ class InputDataService {
         }
         
         return status
+    }
+    
+    func getUserId() -> Int {
+        self.database = DatabaseHelper.postRequest()
+        var result:Int?
+        do{
+            for temp in try self.database.prepare(self.tokenTable) {
+                result = temp[Expression<Int?>("user_id")]
+            }
+        }catch{
+            print(error)
+        }
+        
+        return result!
     }
     
 }

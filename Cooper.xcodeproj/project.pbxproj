@@ -28,7 +28,7 @@
 		F95B685A1FA46CD1000715C6 /* InputDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95B68591FA46CD1000715C6 /* InputDataService.swift */; };
 		F95B685D1FA4A3E9000715C6 /* ViewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95B685C1FA4A3E9000715C6 /* ViewService.swift */; };
 		F96B517F1FED422700DA2AB2 /* BaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96B517E1FED422700DA2AB2 /* BaseApi.swift */; };
-		F96B51881FED461500DA2AB2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96B51871FED461500DA2AB2 /* Login.storyboard */; };
+		F98056B61FEF8D29003F89C6 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98056B51FEF8D29003F89C6 /* LoginService.swift */; };
 		F98A583A1FADFA9800F0495A /* ThreeMonthsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98A58391FADFA9800F0495A /* ThreeMonthsViewController.swift */; };
 		F98F1F8E1F924FB80001CC12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98F1F8D1F924FB80001CC12 /* AppDelegate.swift */; };
 		F98F1F901F924FB80001CC12 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98F1F8F1F924FB80001CC12 /* DetailViewController.swift */; };
@@ -118,7 +118,7 @@
 		F967814C1F9C6FA60079A4EA /* Cooper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cooper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96781681F9C74CC0079A4EA /* CooperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CooperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96B517E1FED422700DA2AB2 /* BaseApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApi.swift; sourceTree = "<group>"; };
-		F96B51871FED461500DA2AB2 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		F98056B51FEF8D29003F89C6 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		F98A58391FADFA9800F0495A /* ThreeMonthsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeMonthsViewController.swift; sourceTree = "<group>"; };
 		F98F1F8D1F924FB80001CC12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F98F1F8F1F924FB80001CC12 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -346,7 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				F9FD23681F963ADD005BD2B9 /* LoginViewController.swift */,
-				F96B51871FED461500DA2AB2 /* Login.storyboard */,
+				F98056B51FEF8D29003F89C6 /* LoginService.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -498,7 +498,6 @@
 				F9FDB17E1FAA08DB00D0F8CC /* icons8-attention.png in Resources */,
 				F9FDB17D1FAA08DB00D0F8CC /* icons8-show_property.png in Resources */,
 				F94D67081FACA2EC006FAD85 /* icons8-search.png in Resources */,
-				F96B51881FED461500DA2AB2 /* Login.storyboard in Resources */,
 				F9FDB1801FAA08DB00D0F8CC /* icons8-usd.png in Resources */,
 				F9FDB1771FAA08DB00D0F8CC /* icons8-star.png in Resources */,
 				F90F14521FA5D96C00535668 /* CurrencyManagement.storyboard in Resources */,
@@ -639,6 +638,7 @@
 			files = (
 				F90F144B1FA5D8D200535668 /* CategoryManagementController.swift in Sources */,
 				F90F145E1FA5E4A600535668 /* CurrencyManagementCell.swift in Sources */,
+				F98056B61FEF8D29003F89C6 /* LoginService.swift in Sources */,
 				F9FDC19A1F9782F4006D2493 /* ReportViewController.swift in Sources */,
 				F95B68581FA45D89000715C6 /* ReportService.swift in Sources */,
 				F9FCEE381F9A2B4700F37EE1 /* DatabaseHelper.swift in Sources */,

@@ -32,19 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-//        do{
-//        self.database = DatabaseHelper.postRequest()
-//        try self.database.run(currencyTable.addColumn(Expression<Int?>("status")))
-//        let updateData = self.currencyTable.filter(self.deleteFlag == 0)
-//        let updateQuery = updateData.update( Expression<Int>("status") <- 0)
-//        try self.database.run(updateQuery)
-//        let updateDataTwo = self.currencyTable.filter(self.deleteFlag == 0 && self.currencyCode == "USD")
-//        let updateQueryTwo = updateDataTwo.update( Expression<Int>("status") <- 1)
-//        try self.database.run(updateQueryTwo)
-//        }catch{
-//            print(error)
-//        }
-        
         // 得到当前应用的版本号
         let infoDictionary = Bundle.main.infoDictionary
         let currentAppVersion = infoDictionary!["CFBundleShortVersionString"] as! String
@@ -74,6 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let createTokenTable = self.tokenTable.create{(table) in
                 table.column(self.id,primaryKey:true)
                 table.column(self.token)
+                table.column(self.userId)
             }
             
             do{
@@ -130,14 +118,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             // 保存最新的版本号
             userDefaults.setValue(currentAppVersion, forKey: "appVersion")
-            print("first excute")
 
+            let guideViewController = storyboard.instantiateViewController(withIdentifier: "GuideViewController") as! GuideViewController
+            self.window?.rootViewController = guideViewController
             
         }
         
-        let guideViewController = storyboard.instantiateViewController(withIdentifier: "GuideViewController") as! GuideViewController
-        self.window?.rootViewController = guideViewController
-        
+        do{
+            self.database = DatabaseHelper.postRequest()
+            let result = try self.database.scalar(self.tokenTable.count)
+            if result == 0 {
+                let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+                self.window?.rootViewController = loginViewController
+            } else if result == 1 {
+                let tabBarViewController = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+                self.window?.rootViewController = tabBarViewController
+            } else {
+                print("Wrong number of token in sqlite")
+            }
+        } catch {
+            print(error)
+        }
         
         return true
     }

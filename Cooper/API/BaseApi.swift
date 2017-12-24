@@ -82,20 +82,25 @@ class BaseApi{
     
     func baseApi(url : URL,paras : Parameters, success:@escaping (JSON) -> Void, failure:@escaping (Error) -> Void){
         
-        let url = URL(string: "http://127.0.0.1:8000/api/login")
-        
-//        let toke = getToken()
-        
+        let database : Connection! = DatabaseHelper.postRequest()
+
         var headers: HTTPHeaders = [:]
+        var result:Int?
+        do{
+            result = try database.scalar(Table("access_token").count)
+        }catch{
+            print(error)
+        }
+        if result == 1 {
+            var toke = getToken()
+            toke = "Bearer "+toke
+            headers = [
+                "Authorization": toke,
+                "Accept": "application/json"
+                ]
+        }
         
-//        if !toke.isEmpty {
-//            headers = [
-//                "Authorization": "Basic "+toke,
-//                "Accept": "application/json"
-//            ]
-//        }
-        
-        Alamofire.request(url!, method: .post, parameters: paras, encoding: JSONEncoding.default, headers: headers).responseJSON {(responseObject) -> Void in
+        Alamofire.request(url, method: .post, parameters: paras, encoding: JSONEncoding.default, headers: headers).responseJSON {(responseObject) -> Void in
             
             if responseObject.result.isSuccess {
                 let resJson = JSON(responseObject.result.value!)
@@ -122,11 +127,12 @@ class BaseApi{
         return result!
     }
     
-    func saveToken(token : String) {
+    func saveToken(token : String,userId : String) {
         let database : Connection! = DatabaseHelper.postRequest()
         do{
             try database.run(Table("access_token").insert(
-                Expression<String?>("token") <- token
+                Expression<String?>("token") <- token,
+                Expression<Int?>("user_id") <- Int(userId)
             ))
         }catch{
             print(error)

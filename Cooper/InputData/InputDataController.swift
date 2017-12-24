@@ -9,6 +9,8 @@
 import UIKit
 import SQLite
 import CoreLocation
+import SwiftyJSON
+import Alamofire
 
 class InputDataController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,CLLocationManagerDelegate {
     
@@ -39,9 +41,11 @@ class InputDataController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
     
     let inputDataService = InputDataService()
     let currencyService = CurrencyManagementService()
+    let loginService = LoginService()
     var inputDetailModel :InputDetail?
     var currencyCode :String?
     var currencyId :String?
+    let baseApiTemp = BaseApi()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,9 +69,6 @@ class InputDataController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
         self.currencyCode = currencyService.selectCurrencyCode()
         self.currencyId = currencyService.selectCurrencyId(currencyCode: self.currencyCode!)
         var attributedString :NSAttributedString?
-//        let text = currencyCode
-//        let nsText = text as NSString
-//        let textRange = NSMakeRange(nsText.length, nsText.length)
         let myRange = NSRange(location: 10, length: (currencyCode?.count)!)
         currencyCode = "Currency: " + currencyCode!
         let myMutableString = NSMutableAttributedString(
@@ -106,32 +107,31 @@ class InputDataController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
             errorFlag = true
         }
         if errorFlag == false {
-        
-            let tempCategoryId = String(categoryId!)
-            inputDetailModel = InputDetail(
-                id: "",
-                amount: String(Int(amountOfMoney.text!)!),
-                categoryId: tempCategoryId,
-                categoryName: "",
-                typeFlag: String(segUi.selectedSegmentIndex),
-                createTime: Date(),
-                updateTime: Date(),
-                currencyId: self.currencyId!,
-                currencyCode: "",
-                deleteFlag: "0",
-                comment: "",
-                imageAddress: "",
-                location: location!)
-            var status: Bool = false
 
-            if inputDataService.insertData(inputDetailModal: inputDetailModel!) == true {
-                status = true
-            }
-            amountOfMoney.text! = ""
-            if status == true {
-                createAlert(title: "Succeed", message: "You have inserted the data!")
-            } else {
-                createAlert(title: "Fail", message: "You fail to inserted the data!")
+            let user_id = inputDataService.getUserId()
+            let dict = ["user_id":String(user_id), "amount":String(Int(amountOfMoney.text!)!),"category_id":String(categoryId!), "consumption_flag":String(segUi.selectedSegmentIndex), "currency_id":self.currencyId!, "location":location!]
+            let parameters: Parameters = [
+                "user_id": dict["user_id"]!,
+                "amount": dict["amount"]!,
+                "category_id": dict["category_id"]!,
+                "consumption_flag": dict["consumption_flag"]!,
+                "currency_id": dict["currency_id"]!,
+                "location": dict["location"]!
+            ]
+            let url = URL(string: "http://127.0.0.1:8000/api/updateInputDetail")
+            baseApiTemp.baseApi(url: url!,paras: parameters as! [String : String], success: {
+                (JSONResponse) -> Void in
+                let json = JSON(JSONResponse)
+                print(JSONResponse)
+                if json["status"].stringValue == "success" {
+                    self.amountOfMoney.text! = ""
+                    self.createAlert(title: "Succeed", message: "You have inserted the data!")
+                } else {
+                    self.createAlert(title: "Fail", message: "You fail to inserted the data!")
+                }
+            }) {
+                (error) -> Void in
+                print(error)
             }
         
         }
@@ -190,5 +190,5 @@ class InputDataController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
             }
         })
     }
-    
+
 }

@@ -64,5 +64,65 @@
             </objects>
             <point key="canvasLocation" x="-3315" y="-711"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="nXR-pQ-tID">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="k0y-NZ-DcY" customClass="LoginViewController" customModule="Cooper" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QJu-zv-cVR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yZj-Ef-57I">
+                                <rect key="frame" x="102" y="99" width="170" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohU-nA-tq2">
+                                <rect key="frame" x="133" y="553" width="108" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="2Gn-l7-1Gx"/>
+                                    <constraint firstAttribute="width" constant="130" id="Anb-Nn-BOS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginButton:" destination="k0y-NZ-DcY" eventType="touchUpInside" id="fCm-aO-dEx"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OFK-DV-Csm">
+                                <rect key="frame" x="102" y="193" width="170" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c6K-bK-eSy">
+                                <rect key="frame" x="102" y="290" width="170" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9fb-Zg-Bul" firstAttribute="bottom" secondItem="ohU-nA-tq2" secondAttribute="bottom" constant="72" id="BCf-rH-5jn"/>
+                            <constraint firstItem="9fb-Zg-Bul" firstAttribute="trailing" secondItem="ohU-nA-tq2" secondAttribute="trailing" constant="134" id="riW-Ke-smG"/>
+                            <constraint firstItem="ohU-nA-tq2" firstAttribute="leading" secondItem="9fb-Zg-Bul" secondAttribute="leading" constant="133" id="sbA-mM-lRh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9fb-Zg-Bul"/>
+                    </view>
+                    <connections>
+                        <outlet property="email" destination="OFK-DV-Csm" id="Zo1-6K-WBh"/>
+                        <outlet property="name" destination="yZj-Ef-57I" id="Swf-va-ZB0"/>
+                        <outlet property="password" destination="c6K-bK-eSy" id="YdE-p3-sSs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vSu-5w-pl9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4455" y="-215"/>
+        </scene>
     </scenes>
 </document>

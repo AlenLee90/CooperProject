@@ -17,6 +17,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     
     let baseApiTemp = BaseApi()
+    let loginService = LoginService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,7 @@ class LoginViewController: UIViewController {
             (JSONResponse) -> Void in
             let json = JSON(JSONResponse)
             if json["status"].stringValue == "success" {
-                self.baseApiTemp.saveToken(token: json["data"]["token"].stringValue)
+                self.baseApiTemp.saveToken(token: json["data"]["token"].stringValue,userId: json["data"]["user_id"].stringValue)
                 self.present( UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! TabBarController, animated: true, completion: nil)
             } else {
                 self.createAlert(title: "Fail", message: "Wrong name or password or email.")
@@ -57,4 +58,5 @@ class LoginViewController: UIViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
+    
 }

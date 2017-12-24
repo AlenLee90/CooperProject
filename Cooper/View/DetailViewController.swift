@@ -8,6 +8,8 @@
 
 import UIKit
 import SQLite
+import SwiftyJSON
+import Alamofire
 
 class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -27,7 +29,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var searchDate :String?
     
     let viewService = ViewService()
-    
+    let inputDataService = InputDataService()
+    let baseApiTemp = BaseApi()
     var inputDetailModel = [InputDetail]()
     
     override func viewDidLoad() {
@@ -131,47 +134,61 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func getTableViewData() {
-        inputDetailModel = viewService.selectTableData(searchDate: searchDate!)
-        
-        for data in inputDetailModel{
-            var tempAmount = data.amount
-            var tempTwoAmout :NSAttributedString?
-            if Int(data.typeFlag) == 0 {
-                tempAmount = "-"+tempAmount
-                let text = tempAmount
-                let nsText = text as NSString
-                let textRange = NSMakeRange(0, nsText.length)
-                let myMutableString = NSMutableAttributedString(
-                    string: tempAmount,
-                    attributes: [:])
-                myMutableString.addAttribute(
-                    NSAttributedStringKey.foregroundColor,
-                    value: UIColor.red,
-                    range: textRange)
-                tempTwoAmout = myMutableString
+        let user_id = inputDataService.getUserId()
+        let dict = ["user_id":String(user_id), "date":self.searchDate]
+        let parameters: Parameters = [
+            "user_id": dict["user_id"]!!,
+            "date": dict["date"]!!
+        ]
+        let url = URL(string: "http://127.0.0.1:8000/api/getViewDatas")
+        baseApiTemp.baseApi(url: url!,paras: parameters as! [String : String], success: {
+            (JSONResponse) -> Void in
+            let json = JSON(JSONResponse)
+            if json["status"].stringValue == "success" {
+                for index in 1...json["data"].count{
+                    var tempAmount = json["data"][index-1]["amount"].stringValue
+                    var tempTwoAmout :NSAttributedString?
+                    if json["data"][index-1]["consumption_flag"].stringValue == "0" {
+                        tempAmount = "-"+tempAmount
+                        let text = tempAmount
+                        let nsText = text as NSString
+                        let textRange = NSMakeRange(0, nsText.length)
+                        let myMutableString = NSMutableAttributedString(
+                            string: tempAmount,
+                            attributes: [:])
+                            myMutableString.addAttribute(
+                            NSAttributedStringKey.foregroundColor,
+                            value: UIColor.red,
+                            range: textRange)
+                            tempTwoAmout = myMutableString
+                    }else {
+                        tempAmount = "+"+tempAmount
+                        
+                        let text = tempAmount
+                        let nsText = text as NSString
+                        let textRange = NSMakeRange(0, nsText.length)
+                        
+                        let myMutableString = NSMutableAttributedString(
+                            string: tempAmount,
+                                attributes: [:])
+                                myMutableString.addAttribute(
+                                    NSAttributedStringKey.foregroundColor,
+                                    value: UIColor.green,
+                                    range: textRange)
+                                tempTwoAmout = myMutableString
+                    }
+                    self.labelOneArray.append(json["data"][index-1]["id"].stringValue)
+                    self.labelTwoArray.append(tempTwoAmout!)
+                    self.labelThreeArray.append(json["data"][index-1]["location"].stringValue)
+                    self.labelFourArray.append(json["data"][index-1]["created_at"].stringValue)
+                }
+                self.tableView.reloadData()
             } else {
-                tempAmount = "+"+tempAmount
-                
-                let text = tempAmount
-                let nsText = text as NSString
-                let textRange = NSMakeRange(0, nsText.length)
-                
-                let myMutableString = NSMutableAttributedString(
-                    string: tempAmount,
-                    attributes: [:])
-                myMutableString.addAttribute(
-                    NSAttributedStringKey.foregroundColor,
-                    value: UIColor.green,
-                    range: textRange)
-                tempTwoAmout = myMutableString
+                self.createAlert(title: "Fail", message: "Something wrong when loading data from api.")
             }
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
-            let createTimeFormat = formatter.string(from: data.createTime)
-            self.labelOneArray.append(data.id)
-            self.labelTwoArray.append(tempTwoAmout!)
-            self.labelThreeArray.append(data.location)
-            self.labelFourArray.append(createTimeFormat)
+        }) {
+            (error) -> Void in
+            print(error)
         }
     }
     
