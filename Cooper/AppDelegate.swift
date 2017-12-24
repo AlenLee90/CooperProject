@@ -73,7 +73,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             let createTokenTable = self.tokenTable.create{(table) in
                 table.column(self.id,primaryKey:true)
-                table.column(self.userId)
                 table.column(self.token)
             }
             

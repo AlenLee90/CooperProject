@@ -7,15 +7,54 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var password: UITextField!
+    
+    let baseApiTemp = BaseApi()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
-    @IBAction func ButtonClick(_ sender: UIButton) {
-                present( UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "tabBarIdentity") as UIViewController, animated: true, completion: nil)
+    @IBAction func loginButton(_ sender: UIButton) {
+        
+        let dict = ["name":name.text,"email":email.text, "password":password.text]
+        let parameters: Parameters = [
+            "name": dict["name"]!!,
+            "email": dict["email"]!!,
+            "password": dict["password"]!!
+        ]
+        let url = URL(string: "http://127.0.0.1:8000/api/login")
+        baseApiTemp.baseApi(url: url!,paras: parameters as! [String : String], success: {
+            (JSONResponse) -> Void in
+            let json = JSON(JSONResponse)
+            if json["status"].stringValue == "success" {
+                self.baseApiTemp.saveToken(token: json["data"]["token"].stringValue)
+                self.present( UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! TabBarController, animated: true, completion: nil)
+            } else {
+                self.createAlert(title: "Fail", message: "Wrong name or password or email.")
+            }
+        }) {
+            (error) -> Void in
+            print(error)
+        }
+    }
+    
+    func createAlert (title:String, message:String){
+        
+        let alert = UIAlertController(title:title, message:message ,preferredStyle:UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title:"OK", style:UIAlertActionStyle.default, handler:{(action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }

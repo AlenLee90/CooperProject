@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2AE898C8459FEA29BAD066C9 /* Pods_Cooper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA8CD20D49DD6CE7DB23BE1 /* Pods_Cooper.framework */; };
+		5BD7400FF866F8F68DFD832A /* Pods_CooperTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9362F1CF8FE1570B0EFCC1ED /* Pods_CooperTests.framework */; };
 		F90F142F1FA5C61100535668 /* PersonalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F142E1FA5C61100535668 /* PersonalCollectionViewCell.swift */; };
 		F90F144B1FA5D8D200535668 /* CategoryManagementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F144A1FA5D8D200535668 /* CategoryManagementController.swift */; };
 		F90F144D1FA5D8E200535668 /* CategoryManagement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F90F144C1FA5D8E200535668 /* CategoryManagement.storyboard */; };
@@ -19,10 +21,6 @@
 		F90F145E1FA5E4A600535668 /* CurrencyManagementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F145D1FA5E4A600535668 /* CurrencyManagementCell.swift */; };
 		F90F14601FA5E72700535668 /* CurrencyManagementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F145F1FA5E72700535668 /* CurrencyManagementService.swift */; };
 		F94D67081FACA2EC006FAD85 /* icons8-search.png in Resources */ = {isa = PBXBuildFile; fileRef = F94D67071FACA2EC006FAD85 /* icons8-search.png */; };
-		F956FB1A1FD98151007424AB /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F956FB041FD98142007424AB /* SQLite.framework */; };
-		F956FB1B1FD98151007424AB /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F956FB041FD98142007424AB /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F956FB1E1FD9815D007424AB /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F956FB171FD98149007424AB /* Charts.framework */; };
-		F956FB1F1FD9815D007424AB /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F956FB171FD98149007424AB /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F95B68521FA44DB6000715C6 /* InputDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95B68511FA44DB6000715C6 /* InputDetail.swift */; };
 		F95B68541FA44EBE000715C6 /* CommonCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95B68531FA44EBE000715C6 /* CommonCurrency.swift */; };
 		F95B68561FA44F44000715C6 /* CommonCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95B68551FA44F44000715C6 /* CommonCategory.swift */; };
@@ -30,6 +28,7 @@
 		F95B685A1FA46CD1000715C6 /* InputDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95B68591FA46CD1000715C6 /* InputDataService.swift */; };
 		F95B685D1FA4A3E9000715C6 /* ViewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95B685C1FA4A3E9000715C6 /* ViewService.swift */; };
 		F96B517F1FED422700DA2AB2 /* BaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96B517E1FED422700DA2AB2 /* BaseApi.swift */; };
+		F96B51881FED461500DA2AB2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96B51871FED461500DA2AB2 /* Login.storyboard */; };
 		F98A583A1FADFA9800F0495A /* ThreeMonthsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98A58391FADFA9800F0495A /* ThreeMonthsViewController.swift */; };
 		F98F1F8E1F924FB80001CC12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98F1F8D1F924FB80001CC12 /* AppDelegate.swift */; };
 		F98F1F901F924FB80001CC12 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98F1F8F1F924FB80001CC12 /* DetailViewController.swift */; };
@@ -69,83 +68,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F956FB031FD98142007424AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F956FAF91FD98141007424AB /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EE247AD31C3F04ED00AE3E12;
-			remoteInfo = "SQLite iOS";
-		};
-		F956FB051FD98142007424AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F956FAF91FD98141007424AB /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EE247ADD1C3F04ED00AE3E12;
-			remoteInfo = "SQLiteTests iOS";
-		};
-		F956FB071FD98142007424AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F956FAF91FD98141007424AB /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EE247B3C1C3F3ED000AE3E12;
-			remoteInfo = "SQLite Mac";
-		};
-		F956FB091FD98142007424AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F956FAF91FD98141007424AB /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EE247B451C3F3ED000AE3E12;
-			remoteInfo = "SQLiteTests Mac";
-		};
-		F956FB0B1FD98142007424AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F956FAF91FD98141007424AB /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 03A65E5A1C6BB0F50062603F;
-			remoteInfo = "SQLite tvOS";
-		};
-		F956FB0D1FD98142007424AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F956FAF91FD98141007424AB /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 03A65E631C6BB0F60062603F;
-			remoteInfo = "SQLiteTests tvOS";
-		};
-		F956FB0F1FD98142007424AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F956FAF91FD98141007424AB /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A121AC451CA35C79005A31D1;
-			remoteInfo = "SQLite watchOS";
-		};
-		F956FB161FD98149007424AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F956FB111FD98149007424AB /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
-			remoteInfo = Charts;
-		};
-		F956FB181FD98149007424AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F956FB111FD98149007424AB /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
-			remoteInfo = ChartsTests;
-		};
-		F956FB1C1FD98151007424AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F956FAF91FD98141007424AB /* SQLite.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = EE247AD21C3F04ED00AE3E12;
-			remoteInfo = "SQLite iOS";
-		};
-		F956FB201FD9815D007424AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F956FB111FD98149007424AB /* Charts.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A58A4ED274A941CA248EA921;
-			remoteInfo = Charts;
-		};
 		F98F1F9F1F924FB90001CC12 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F98F1F821F924FB80001CC12 /* Project object */;
@@ -162,8 +84,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F956FB1B1FD98151007424AB /* SQLite.framework in Embed Frameworks */,
-				F956FB1F1FD9815D007424AB /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,6 +91,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0AC61A1C643F7552271DBBE4 /* Pods-CooperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CooperTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CooperTests/Pods-CooperTests.release.xcconfig"; sourceTree = "<group>"; };
+		152D9CC0B25C537586A85CC5 /* Pods-Cooper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cooper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cooper/Pods-Cooper.debug.xcconfig"; sourceTree = "<group>"; };
+		3F4836574AC32D0D737E06E7 /* Pods-CooperTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CooperTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CooperTests/Pods-CooperTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5C93BAF52DE4CE75DF69B0DB /* Pods-Cooper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cooper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cooper/Pods-Cooper.release.xcconfig"; sourceTree = "<group>"; };
+		9362F1CF8FE1570B0EFCC1ED /* Pods_CooperTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CooperTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEA8CD20D49DD6CE7DB23BE1 /* Pods_Cooper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cooper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F90F142E1FA5C61100535668 /* PersonalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCollectionViewCell.swift; sourceTree = "<group>"; };
 		F90F144A1FA5D8D200535668 /* CategoryManagementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryManagementController.swift; sourceTree = "<group>"; };
 		F90F144C1FA5D8E200535668 /* CategoryManagement.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryManagement.storyboard; sourceTree = "<group>"; };
@@ -183,8 +109,6 @@
 		F90F145D1FA5E4A600535668 /* CurrencyManagementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyManagementCell.swift; sourceTree = "<group>"; };
 		F90F145F1FA5E72700535668 /* CurrencyManagementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyManagementService.swift; sourceTree = "<group>"; };
 		F94D67071FACA2EC006FAD85 /* icons8-search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-search.png"; path = "../../../../Desktop/icon/icons8-search.png"; sourceTree = "<group>"; };
-		F956FAF91FD98141007424AB /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../../Desktop/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
-		F956FB111FD98149007424AB /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../Desktop/Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		F95B68511FA44DB6000715C6 /* InputDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDetail.swift; sourceTree = "<group>"; };
 		F95B68531FA44EBE000715C6 /* CommonCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCurrency.swift; sourceTree = "<group>"; };
 		F95B68551FA44F44000715C6 /* CommonCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCategory.swift; sourceTree = "<group>"; };
@@ -194,6 +118,7 @@
 		F967814C1F9C6FA60079A4EA /* Cooper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cooper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96781681F9C74CC0079A4EA /* CooperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CooperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96B517E1FED422700DA2AB2 /* BaseApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApi.swift; sourceTree = "<group>"; };
+		F96B51871FED461500DA2AB2 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		F98A58391FADFA9800F0495A /* ThreeMonthsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeMonthsViewController.swift; sourceTree = "<group>"; };
 		F98F1F8D1F924FB80001CC12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F98F1F8F1F924FB80001CC12 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -239,9 +164,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F956FB1E1FD9815D007424AB /* Charts.framework in Frameworks */,
-				F956FB1A1FD98151007424AB /* SQLite.framework in Frameworks */,
 				F9F974A81F9B445600B51D23 /* CoreLocation.framework in Frameworks */,
+				2AE898C8459FEA29BAD066C9 /* Pods_Cooper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,16 +173,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BD7400FF866F8F68DFD832A /* Pods_CooperTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84A4983ED79A58356525E7F2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				152D9CC0B25C537586A85CC5 /* Pods-Cooper.debug.xcconfig */,
+				5C93BAF52DE4CE75DF69B0DB /* Pods-Cooper.release.xcconfig */,
+				3F4836574AC32D0D737E06E7 /* Pods-CooperTests.debug.xcconfig */,
+				0AC61A1C643F7552271DBBE4 /* Pods-CooperTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F901E3C41F98CE6B00C51600 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				F9F974A11F9B443400B51D23 /* CoreLocation.framework */,
+				EEA8CD20D49DD6CE7DB23BE1 /* Pods_Cooper.framework */,
+				9362F1CF8FE1570B0EFCC1ED /* Pods_CooperTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -301,29 +239,6 @@
 			path = LanguageManagement;
 			sourceTree = "<group>";
 		};
-		F956FAFA1FD98141007424AB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F956FB041FD98142007424AB /* SQLite.framework */,
-				F956FB061FD98142007424AB /* SQLiteTests iOS.xctest */,
-				F956FB081FD98142007424AB /* SQLite.framework */,
-				F956FB0A1FD98142007424AB /* SQLiteTests Mac.xctest */,
-				F956FB0C1FD98142007424AB /* SQLite.framework */,
-				F956FB0E1FD98142007424AB /* SQLiteTests tvOS.xctest */,
-				F956FB101FD98142007424AB /* SQLite.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		F956FB121FD98149007424AB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F956FB171FD98149007424AB /* Charts.framework */,
-				F956FB191FD98149007424AB /* ChartsTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		F95B68501FA44D44000715C6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,7 +257,7 @@
 				F901E3C41F98CE6B00C51600 /* Frameworks */,
 				F967814C1F9C6FA60079A4EA /* Cooper.app */,
 				F96781681F9C74CC0079A4EA /* CooperTests.xctest */,
-				F956FB111FD98149007424AB /* Charts.xcodeproj */,
+				84A4983ED79A58356525E7F2 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -350,7 +265,6 @@
 			isa = PBXGroup;
 			children = (
 				F98FFDDD1FE946F500CCDD60 /* API */,
-				F956FAF91FD98141007424AB /* SQLite.xcodeproj */,
 				F90F14581FA5DA1E00535668 /* LanguageManagement */,
 				F90F14531FA5D9D500535668 /* CustomStyleManagement */,
 				F90F144E1FA5D94900535668 /* CurrencyManagement */,
@@ -432,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				F9FD23681F963ADD005BD2B9 /* LoginViewController.swift */,
+				F96B51871FED461500DA2AB2 /* Login.storyboard */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -488,16 +403,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F98F1FA71F924FB90001CC12 /* Build configuration list for PBXNativeTarget "Cooper" */;
 			buildPhases = (
+				490242AAAE2730563E0E91E1 /* [CP] Check Pods Manifest.lock */,
 				F98F1F861F924FB80001CC12 /* Sources */,
 				F98F1F871F924FB80001CC12 /* Frameworks */,
 				F98F1F881F924FB80001CC12 /* Resources */,
 				F901E3CA1F98CE8800C51600 /* Embed Frameworks */,
+				6F151A139843CAFAFC681536 /* [CP] Embed Pods Frameworks */,
+				983DA1C0ED4E62785DB4F27F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F956FB1D1FD98151007424AB /* PBXTargetDependency */,
-				F956FB211FD9815D007424AB /* PBXTargetDependency */,
 			);
 			name = Cooper;
 			productName = DailyFinance;
@@ -508,9 +424,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F98F1FAA1F924FB90001CC12 /* Build configuration list for PBXNativeTarget "CooperTests" */;
 			buildPhases = (
+				3490B8AE4281840558CC96BF /* [CP] Check Pods Manifest.lock */,
 				F98F1F9A1F924FB90001CC12 /* Sources */,
 				F98F1F9B1F924FB90001CC12 /* Frameworks */,
 				F98F1F9C1F924FB90001CC12 /* Resources */,
+				5A9FF5010B80D2F82610506D /* [CP] Embed Pods Frameworks */,
+				BB1B8CDFBE419E44B51CB43D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -554,16 +473,6 @@
 			mainGroup = F98F1F811F924FB80001CC12;
 			productRefGroup = F98F1F811F924FB80001CC12;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = F956FB121FD98149007424AB /* Products */;
-					ProjectRef = F956FB111FD98149007424AB /* Charts.xcodeproj */;
-				},
-				{
-					ProductGroup = F956FAFA1FD98141007424AB /* Products */;
-					ProjectRef = F956FAF91FD98141007424AB /* SQLite.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				F98F1F891F924FB80001CC12 /* Cooper */,
@@ -571,72 +480,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		F956FB041FD98142007424AB /* SQLite.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SQLite.framework;
-			remoteRef = F956FB031FD98142007424AB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F956FB061FD98142007424AB /* SQLiteTests iOS.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "SQLiteTests iOS.xctest";
-			remoteRef = F956FB051FD98142007424AB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F956FB081FD98142007424AB /* SQLite.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SQLite.framework;
-			remoteRef = F956FB071FD98142007424AB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F956FB0A1FD98142007424AB /* SQLiteTests Mac.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "SQLiteTests Mac.xctest";
-			remoteRef = F956FB091FD98142007424AB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F956FB0C1FD98142007424AB /* SQLite.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SQLite.framework;
-			remoteRef = F956FB0B1FD98142007424AB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F956FB0E1FD98142007424AB /* SQLiteTests tvOS.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "SQLiteTests tvOS.xctest";
-			remoteRef = F956FB0D1FD98142007424AB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F956FB101FD98142007424AB /* SQLite.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SQLite.framework;
-			remoteRef = F956FB0F1FD98142007424AB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F956FB171FD98149007424AB /* Charts.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Charts.framework;
-			remoteRef = F956FB161FD98149007424AB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F956FB191FD98149007424AB /* ChartsTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ChartsTests.xctest;
-			remoteRef = F956FB181FD98149007424AB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F98F1F881F924FB80001CC12 /* Resources */ = {
@@ -655,6 +498,7 @@
 				F9FDB17E1FAA08DB00D0F8CC /* icons8-attention.png in Resources */,
 				F9FDB17D1FAA08DB00D0F8CC /* icons8-show_property.png in Resources */,
 				F94D67081FACA2EC006FAD85 /* icons8-search.png in Resources */,
+				F96B51881FED461500DA2AB2 /* Login.storyboard in Resources */,
 				F9FDB1801FAA08DB00D0F8CC /* icons8-usd.png in Resources */,
 				F9FDB1771FAA08DB00D0F8CC /* icons8-star.png in Resources */,
 				F90F14521FA5D96C00535668 /* CurrencyManagement.storyboard in Resources */,
@@ -679,6 +523,114 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3490B8AE4281840558CC96BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CooperTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		490242AAAE2730563E0E91E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Cooper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A9FF5010B80D2F82610506D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CooperTests/Pods-CooperTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F151A139843CAFAFC681536 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Cooper/Pods-Cooper-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cooper/Pods-Cooper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		983DA1C0ED4E62785DB4F27F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cooper/Pods-Cooper-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB1B8CDFBE419E44B51CB43D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CooperTests/Pods-CooperTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F98F1F861F924FB80001CC12 /* Sources */ = {
@@ -727,16 +679,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F956FB1D1FD98151007424AB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "SQLite iOS";
-			targetProxy = F956FB1C1FD98151007424AB /* PBXContainerItemProxy */;
-		};
-		F956FB211FD9815D007424AB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Charts;
-			targetProxy = F956FB201FD9815D007424AB /* PBXContainerItemProxy */;
-		};
 		F98F1FA01F924FB90001CC12 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F98F1F891F924FB80001CC12 /* Cooper */;
@@ -865,6 +807,7 @@
 		};
 		F98F1FA81F924FB90001CC12 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 152D9CC0B25C537586A85CC5 /* Pods-Cooper.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -881,6 +824,7 @@
 		};
 		F98F1FA91F924FB90001CC12 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C93BAF52DE4CE75DF69B0DB /* Pods-Cooper.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -897,6 +841,7 @@
 		};
 		F98F1FAB1F924FB90001CC12 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F4836574AC32D0D737E06E7 /* Pods-CooperTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -913,6 +858,7 @@
 		};
 		F98F1FAC1F924FB90001CC12 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AC61A1C643F7552271DBBE4 /* Pods-CooperTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

@@ -7,17 +7,20 @@
 //
 
 import UIKit
+import SQLite
 
 class GuideViewController: UIViewController {
     
     @IBOutlet weak var pageControl: UIPageControl!
-    
    
     @IBOutlet weak var startButton: UIButton!
     
     fileprivate var scrollView: UIScrollView!
     
     fileprivate let numOfPages = 3
+    
+    var database : Connection!
+    let tokenTable = Table("access_token")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +59,20 @@ class GuideViewController: UIViewController {
     }
     
     @IBAction func startPresent(_ sender: UIButton) {
-        present( UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! TabBarController, animated: true, completion: nil)
+        self.database = DatabaseHelper.postRequest()
+        
+        do{
+            let result = try self.database.scalar(self.tokenTable.count)
+            if result == 0 {
+                present( UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") , animated: true, completion: nil)
+            } else if result == 1 {
+                present( UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! TabBarController, animated: true, completion: nil)
+            } else {
+                print("Wrong number of token in sqlite")
+            }
+        } catch {
+            print(error)
+        }
     }
     
 }
