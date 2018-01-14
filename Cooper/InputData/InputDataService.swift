@@ -30,30 +30,30 @@ class InputDataService {
         return pickerLists!
     }
     
-    func insertData(inputDetailModal : InputDetail) -> Bool {
-        var status = false
-        
-        do{
-            try self.database.run(Table("input_detail").insert(
-                Expression<Int?>("amount") <- Int((inputDetailModal.amount)),
-                Expression<Int?>("category_id") <- Int((inputDetailModal.categoryId)),
-                Expression<Int?>("type_flag") <- Int((inputDetailModal.typeFlag)),
-                Expression<Date?>("create_time") <- inputDetailModal.createTime,
-                Expression<Date?>("update_time") <- inputDetailModal.updateTime,
-                Expression<Int?>("currency_id") <- Int((inputDetailModal.currencyId)),
-                Expression<Int?>("delete_flag") <- Int((inputDetailModal.deleteFlag)),
-                Expression<String?>("comment") <- inputDetailModal.comment,
-                Expression<String?>("image_address") <- inputDetailModal.imageAddress,
-                Expression<String?>("location") <- inputDetailModal.location
-            ))
-            print("Inserted Data")
-            status = true
-        }catch{
-            print(error)
-        }
-        
-        return status
-    }
+//    func insertData(inputDetailModal : InputDetail) -> Bool {
+//        var status = false
+//        
+//        do{
+//            try self.database.run(Table("input_detail").insert(
+//                Expression<Int?>("amount") <- Int((inputDetailModal.amount)),
+//                Expression<Int?>("category_id") <- Int((inputDetailModal.categoryId)),
+//                Expression<Int?>("type_flag") <- Int((inputDetailModal.typeFlag)),
+//                Expression<Date?>("create_time") <- inputDetailModal.createTime,
+//                Expression<Date?>("update_time") <- inputDetailModal.updateTime,
+//                Expression<Int?>("currency_id") <- Int((inputDetailModal.currencyId)),
+//                Expression<Int?>("delete_flag") <- Int((inputDetailModal.deleteFlag)),
+//                Expression<String?>("comment") <- inputDetailModal.comment,
+//                Expression<String?>("image_address") <- inputDetailModal.imageAddress,
+//                Expression<String?>("location") <- inputDetailModal.location
+//            ))
+//            print("Inserted Data")
+//            status = true
+//        }catch{
+//            print(error)
+//        }
+//        
+//        return status
+//    }
     
     func getUserId() -> Int {
         self.database = DatabaseHelper.postRequest()

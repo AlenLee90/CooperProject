@@ -31,7 +31,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let viewService = ViewService()
     let inputDataService = InputDataService()
     let baseApiTemp = BaseApi()
-    var inputDetailModel = [InputDetail]()
+//    var inputDetailModel = [InputDetail]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,26 +93,69 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        
-        let updateData = self.inputDetailTable.filter(self.id == Int(labelOneArray[indexPath.row])!)
-        let updateQuery = updateData.update(self.deleteFlag <- 1)
+        let id = self.labelOneArray[indexPath.row]
         let alert = UIAlertController(title:"Confirm", message:"Are you sure to delete the date?" ,preferredStyle:UIAlertControllerStyle.alert)
-        
+        let dict = ["id":id]
+        let parameters: Parameters = [
+            "id": dict["id"]!
+        ]
+        let url = URL(string: "http://127.0.0.1:8000/api/deleteViewData")
+//        baseApiTemp.baseApi(url: url!,paras: parameters as! [String : String], success: {
+//            (JSONResponse) -> Void in
+//            let json = JSON(JSONResponse)
+//            print(JSONResponse)
+//            if json["status"].stringValue == "success" {
+//                alert.addAction(UIAlertAction(title:"Yes", style:UIAlertActionStyle.default, handler:{(action) in
+//                    self.labelOneArray.remove(at: indexPath.row)
+//                    self.labelTwoArray.remove(at: indexPath.row)
+//                    self.labelThreeArray.remove(at: indexPath.row)
+//                    self.labelFourArray.remove(at: indexPath.row)
+//                    if self.viewService.deleteTableData(id: id) == true {
+//                        self.createAlert(title: "Succeed", message: "Deleted the data!")
+//                    } else {
+//                        self.createAlert(title: "Failed", message: "Fail to delete data!")
+//                    }
+//                    alert.dismiss(animated: true, completion: nil)
+//                    tableView.reloadData()
+//                }))
+//
+//                alert.addAction(UIAlertAction(title:"No", style:UIAlertActionStyle.default, handler:{(action) in
+//                    alert.dismiss(animated: true, completion: nil)
+//                }))
+//            } else {
+//                self.createAlert(title: "Failed", message: "Fail to delete data!")
+//            }
+//        }) {
+//            (error) -> Void in
+//            print(error)
+//        }
         alert.addAction(UIAlertAction(title:"Yes", style:UIAlertActionStyle.default, handler:{(action) in
             self.labelOneArray.remove(at: indexPath.row)
             self.labelTwoArray.remove(at: indexPath.row)
             self.labelThreeArray.remove(at: indexPath.row)
             self.labelFourArray.remove(at: indexPath.row)
-            
-            if self.viewService.deleteTableData(updateQuery: updateQuery) == true {
-                self.createAlert(title: "Succeed", message: "Deleted the data!")
+
+            if self.viewService.deleteTableData(id: id) == true {
+                self.baseApiTemp.baseApi(url: url!,paras: parameters as! [String : String], success: {
+                    (JSONResponse) -> Void in
+                    let json = JSON(JSONResponse)
+                    print(JSONResponse)
+                    if json["status"].stringValue == "success" {
+                        self.createAlert(title: "Succeed", message: "Deleted the data!")
+                    } else {
+                        self.createAlert(title: "Failed", message: "Fail to delete data!")
+                    }
+                }) {
+                    (error) -> Void in
+                    print(error)
+                }
             } else {
                 self.createAlert(title: "Failed", message: "Fail to delete data!")
             }
             alert.dismiss(animated: true, completion: nil)
             tableView.reloadData()
         }))
-        
+
         alert.addAction(UIAlertAction(title:"No", style:UIAlertActionStyle.default, handler:{(action) in
             alert.dismiss(animated: true, completion: nil)
         }))
@@ -134,6 +178,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func getTableViewData() {
+        if viewService.checkDataExist() == 0 {
         let user_id = inputDataService.getUserId()
         let dict = ["user_id":String(user_id), "date":self.searchDate]
         let parameters: Parameters = [
@@ -144,51 +189,117 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         baseApiTemp.baseApi(url: url!,paras: parameters as! [String : String], success: {
             (JSONResponse) -> Void in
             let json = JSON(JSONResponse)
-            if json["status"].stringValue == "success" {
+            if json["status"].stringValue == "success" && json["data"].count != 0 {
+                var inputDetailModel = [InputDetail]()
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
                 for index in 1...json["data"].count{
-                    var tempAmount = json["data"][index-1]["amount"].stringValue
-                    var tempTwoAmout :NSAttributedString?
-                    if json["data"][index-1]["consumption_flag"].stringValue == "0" {
-                        tempAmount = "-"+tempAmount
-                        let text = tempAmount
-                        let nsText = text as NSString
-                        let textRange = NSMakeRange(0, nsText.length)
-                        let myMutableString = NSMutableAttributedString(
-                            string: tempAmount,
-                            attributes: [:])
-                            myMutableString.addAttribute(
-                            NSAttributedStringKey.foregroundColor,
-                            value: UIColor.red,
-                            range: textRange)
-                            tempTwoAmout = myMutableString
-                    }else {
-                        tempAmount = "+"+tempAmount
-                        
-                        let text = tempAmount
-                        let nsText = text as NSString
-                        let textRange = NSMakeRange(0, nsText.length)
-                        
-                        let myMutableString = NSMutableAttributedString(
-                            string: tempAmount,
-                                attributes: [:])
-                                myMutableString.addAttribute(
-                                    NSAttributedStringKey.foregroundColor,
-                                    value: UIColor.green,
-                                    range: textRange)
-                                tempTwoAmout = myMutableString
-                    }
-                    self.labelOneArray.append(json["data"][index-1]["id"].stringValue)
-                    self.labelTwoArray.append(tempTwoAmout!)
-                    self.labelThreeArray.append(json["data"][index-1]["location"].stringValue)
-                    self.labelFourArray.append(json["data"][index-1]["created_at"].stringValue)
+                    let inputDetail = InputDetail(id: "", amount: "", categoryId: "", typeFlag: "", createdAt: "", updatedAt: "", currencyId: "", deleteFlag: "", comment: "", imageUrl: "", location: "")
+                    inputDetail.id = json["data"][index-1]["id"].stringValue
+                    inputDetail.amount = json["data"][index-1]["amount"].stringValue
+                    inputDetail.categoryId = json["data"][index-1]["category_id"].stringValue
+                    inputDetail.comment = json["data"][index-1]["comment"].stringValue
+                    inputDetail.createdAt = formatter.string(from: Date())
+                    inputDetail.updatedAt = formatter.string(from: Date())
+                    inputDetail.currencyId = json["data"][index-1]["currency_id"].stringValue
+                    inputDetail.imageUrl = json["data"][index-1]["image_url"].stringValue
+                    inputDetail.typeFlag = json["data"][index-1]["consumption_flag"].stringValue
+                    inputDetail.location = json["data"][index-1]["location"].stringValue
+                    inputDetailModel.append(inputDetail)
                 }
-                self.tableView.reloadData()
-            } else {
-                self.createAlert(title: "Fail", message: "Something wrong when loading data from api.")
+                self.viewService.saveData(inputDetailModel: inputDetailModel)
             }
+            let inputDetailModel = self.viewService.selectTableData(searchDate: self.searchDate!)
+            
+            for data in inputDetailModel{
+                print(data.createdAt)
+                var tempAmount = data.amount
+                var tempTwoAmout :NSAttributedString?
+                if Int(data.typeFlag) == 0 {
+                    tempAmount = "-"+tempAmount
+                    let text = tempAmount
+                    let nsText = text as NSString
+                    let textRange = NSMakeRange(0, nsText.length)
+                    let myMutableString = NSMutableAttributedString(
+                        string: tempAmount,
+                        attributes: [:])
+                    myMutableString.addAttribute(
+                        NSAttributedStringKey.foregroundColor,
+                        value: UIColor.red,
+                        range: textRange)
+                    tempTwoAmout = myMutableString
+                } else {
+                    tempAmount = "+"+tempAmount
+                    
+                    let text = tempAmount
+                    let nsText = text as NSString
+                    let textRange = NSMakeRange(0, nsText.length)
+                    
+                    let myMutableString = NSMutableAttributedString(
+                        string: tempAmount,
+                        attributes: [:])
+                    myMutableString.addAttribute(
+                        NSAttributedStringKey.foregroundColor,
+                        value: UIColor.green,
+                        range: textRange)
+                    tempTwoAmout = myMutableString
+                }
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+                let createTimeFormat = data.createdAt
+                self.labelOneArray.append(data.id)
+                self.labelTwoArray.append(tempTwoAmout!)
+                self.labelThreeArray.append(data.location)
+                self.labelFourArray.append(createTimeFormat)
+            }
+            self.tableView.reloadData()
         }) {
             (error) -> Void in
             print(error)
+        }
+        } else {
+        let inputDetailModel = viewService.selectTableData(searchDate: searchDate!)
+        
+        for data in inputDetailModel{
+            var tempAmount = data.amount
+            var tempTwoAmout :NSAttributedString?
+            if Int(data.typeFlag) == 0 {
+                tempAmount = "-"+tempAmount
+                let text = tempAmount
+                let nsText = text as NSString
+                let textRange = NSMakeRange(0, nsText.length)
+                let myMutableString = NSMutableAttributedString(
+                    string: tempAmount,
+                    attributes: [:])
+                myMutableString.addAttribute(
+                    NSAttributedStringKey.foregroundColor,
+                    value: UIColor.red,
+                    range: textRange)
+                tempTwoAmout = myMutableString
+            } else {
+                tempAmount = "+"+tempAmount
+                
+                let text = tempAmount
+                let nsText = text as NSString
+                let textRange = NSMakeRange(0, nsText.length)
+                
+                let myMutableString = NSMutableAttributedString(
+                    string: tempAmount,
+                    attributes: [:])
+                myMutableString.addAttribute(
+                    NSAttributedStringKey.foregroundColor,
+                    value: UIColor.green,
+                    range: textRange)
+                tempTwoAmout = myMutableString
+            }
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+            let createTimeFormat = data.createdAt
+            self.labelOneArray.append(data.id)
+            self.labelTwoArray.append(tempTwoAmout!)
+            self.labelThreeArray.append(data.location)
+            self.labelFourArray.append(createTimeFormat)
+        }
         }
     }
     

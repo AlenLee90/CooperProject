@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var database : Connection!
     
     let currencyTable = Table("currencies")
+    let inputDetailTable = Table("input_cache")
+    let reportTable = Table("report_cache")
     let currencyId = Expression<Int>("currency_id")
     let currencyCode = Expression<String>("currency_code")
     let categoryTable = Table("categories")
@@ -64,6 +66,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 table.column(self.userId)
             }
             
+            let createInputTable = self.inputDetailTable.create{(table) in
+                table.column(Expression<Int>("id"))
+                table.column(Expression<Int>("user_id"))
+                table.column(Expression<Int>("amount"))
+                table.column(Expression<Int>("category_id"))
+                table.column(Expression<Int>("consumption_flag"))
+                table.column(Expression<Int>("currency_id"))
+                table.column(Expression<Int>("location"),defaultValue:nil)
+                table.column(Expression<Int>("comment"),defaultValue:nil)
+                table.column(Expression<Int>("image_url"),defaultValue:nil)
+                table.column(Expression<Int>("delete_flag"),defaultValue:0)
+                table.column(Expression<Int>("created_at"))
+                table.column(Expression<Int>("updated_at"))
+            }
+            
+            let reportTable = self.reportTable.create{(table) in
+                table.column(Expression<Int>("id"),primaryKey:true)
+                table.column(Expression<Int>("today_payment"),defaultValue:0)
+                table.column(Expression<Int>("today_income"),defaultValue:0)
+                table.column(Expression<Int>("today_summary"),defaultValue:0)
+                table.column(Expression<Int>("two_weeks_summary"),defaultValue:0)
+                table.column(Expression<Int>("three_months_summary"),defaultValue:0)
+            }
+            
+            do{
+                self.database = DatabaseHelper.postRequest()
+                try self.database.run(createInputTable)
+                print("Created InputDetail Table")
+            }catch{
+                print(error)
+            }
+            
+            do{
+                self.database = DatabaseHelper.postRequest()
+                try self.database.run(reportTable)
+                print("Created Report Table")
+            }catch{
+                print(error)
+            }
+            
             do{
                 try self.database.run(createCurrencyTable)
                 print("Created Currency Table")
@@ -109,6 +151,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }catch{
                     print(error)
                 }
+            }
+            
+            do{
+                let temp = self.currencyTable.filter(self.currencyCode == "USD")
+                try self.database.run(temp.update(self.status <- 1))
+            }catch{
+                print(error)
             }
             
         }

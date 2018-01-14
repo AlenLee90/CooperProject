@@ -109,6 +109,9 @@ class InputDataController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
         if errorFlag == false {
 
             let user_id = inputDataService.getUserId()
+            if (location?.isEmpty)! {
+                location = ""
+            }
             let dict = ["user_id":String(user_id), "amount":String(Int(amountOfMoney.text!)!),"category_id":String(categoryId!), "consumption_flag":String(segUi.selectedSegmentIndex), "currency_id":self.currencyId!, "location":location!]
             let parameters: Parameters = [
                 "user_id": dict["user_id"]!,
